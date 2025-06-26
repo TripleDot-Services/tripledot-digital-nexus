@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -194,9 +193,14 @@ const Index = () => {
                   <div className="text-gray-400 text-sm">Cutting-edge solutions</div>
                 </div>
               </div>
-              <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
-                <Link to="/contact">Start Your Journey</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                  <Link to="/contact">Start Your Journey</Link>
+                </Button>
+                <Button variant="outline" className="border-gray-600 text-white hover:bg-gray-900">
+                  <Link to="/tools">Try Our Tools</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
