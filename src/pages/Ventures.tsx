@@ -1,11 +1,33 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Award, TrendingUp, Users, Zap } from "lucide-react";
 
 const Ventures = () => {
+  const ventureSuccessMetrics = [
+    { label: "Ventures Launched", value: "8", description: "From prototype to market" },
+    { label: "Success Rate", value: "75%", description: "Ventures reaching market fit" },
+    { label: "Partner Collaborations", value: "15+", description: "Strategic partnerships formed" },
+    { label: "Innovation Awards", value: "3", description: "Industry recognition received" }
+  ];
+
+  const partnerTestimonials = [
+    {
+      quote: "TripleDot Ventures didn't just build our tool - they became our innovation partners. Their venture is now integral to our daily operations.",
+      author: "Alex Chen",
+      role: "Innovation Director",
+      company: "TechForward Inc."
+    },
+    {
+      quote: "The prototype-to-market process was seamless. They understood our industry needs and delivered exactly what we didn't know we needed.",
+      author: "Maria Santos",
+      role: "Operations Manager", 
+      company: "StartupHub"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -21,6 +43,25 @@ const Ventures = () => {
               Our internal innovation and product lab where we build, test, and launch new digital solutions. 
               A peek into the future of technology and business innovation.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Venture Success Metrics */}
+      <section className="pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Venture Track Record</h2>
+            <p className="text-gray-400 text-lg">Proven results in innovation and market validation</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {ventureSuccessMetrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-emerald-400 mb-2">{metric.value}</div>
+                <div className="text-white font-medium mb-1">{metric.label}</div>
+                <div className="text-gray-400 text-sm">{metric.description}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -70,6 +111,64 @@ const Ventures = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Testimonials */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-950/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Innovation Partner Feedback</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {partnerTestimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-gray-900/50 border-gray-800">
+                <CardContent className="p-8">
+                  <p className="text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
+                  <div>
+                    <p className="text-white font-semibold">{testimonial.author}</p>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    <p className="text-emerald-400 text-sm">{testimonial.company}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Venture Credentials */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Innovation Credentials</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-emerald-400 mb-2">Innovation Awards</h3>
+              <p className="text-gray-400 text-sm">Regional Innovation Excellence Award 2024</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-blue-400 mb-2">Market Validation</h3>
+              <p className="text-gray-400 text-sm">Lean Startup & Design Thinking Certified</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-purple-400 mb-2">Industry Networks</h3>
+              <p className="text-gray-400 text-sm">Active in 5+ innovation ecosystems</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-orange-400 mb-2">R&D Investment</h3>
+              <p className="text-gray-400 text-sm">25% revenue invested in innovation</p>
             </div>
           </div>
         </div>

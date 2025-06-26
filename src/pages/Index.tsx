@@ -5,8 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
+import DetailedTestimonials from "@/components/DetailedTestimonials";
 import CaseStudies from "@/components/CaseStudies";
 import FAQ from "@/components/FAQ";
+import ClientShowcase from "@/components/ClientShowcase";
+import CredentialsSection from "@/components/CredentialsSection";
 
 const Index = () => {
   return (
@@ -55,6 +58,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Client Showcase */}
+      <ClientShowcase />
 
       {/* Three Pillars */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50">
@@ -164,8 +170,11 @@ const Index = () => {
       {/* Case Studies */}
       <CaseStudies />
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Detailed Testimonials */}
+      <DetailedTestimonials />
+
+      {/* Credentials & Recognition */}
+      <CredentialsSection />
 
       {/* Growth Philosophy */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
