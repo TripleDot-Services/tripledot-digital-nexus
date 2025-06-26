@@ -5,10 +5,10 @@ import { ArrowRight } from "lucide-react";
 
 const ServiceCTA = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-        <p className="text-xl text-gray-300 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h2>
+        <p className="text-lg text-gray-300 mb-6">
           Let's discuss your project and create a solution that drives real results.
         </p>
         <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">

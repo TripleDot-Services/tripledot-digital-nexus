@@ -30,15 +30,15 @@ const ServiceCategories = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors">
-              <service.icon className="w-12 h-12 text-blue-400 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-              <p className="text-gray-300 mb-6">{service.description}</p>
-              <ul className="space-y-2">
+            <div key={index} className="bg-gray-900/50 p-6 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors">
+              <service.icon className="w-10 h-10 text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-gray-300 mb-4 text-sm">{service.description}</p>
+              <ul className="space-y-1">
                 {service.features.map((feature, i) => (
                   <li key={i} className="text-blue-200 text-sm">• {feature}</li>
                 ))}
