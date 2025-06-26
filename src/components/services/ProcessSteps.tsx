@@ -1,40 +1,33 @@
 
 const ProcessSteps = () => {
-  const processSteps = [
+  const steps = [
     {
-      step: "1",
-      title: "Discovery & Assessment",
-      description: "We analyze your current setup, identify pain points, and understand your goals through detailed workshops and technical audits."
+      number: "01",
+      title: "Discovery",
+      description: "We understand your needs, challenges, and goals through detailed consultation."
     },
     {
-      step: "2",
-      title: "Strategy & Planning",
-      description: "Custom roadmap creation with clear milestones, timelines, and success metrics aligned with your business objectives."
+      number: "02",
+      title: "Strategy",
+      description: "We design a technical roadmap that aligns with your business objectives."
     },
     {
-      step: "3",
-      title: "Implementation & Testing",
-      description: "Careful deployment with thorough testing, user training, and gradual rollout to minimize disruption."
-    },
-    {
-      step: "4",
-      title: "Optimization & Support",
-      description: "Ongoing monitoring, performance optimization, and continuous improvement based on usage data and feedback."
+      number: "03",
+      title: "Execution",
+      description: "We build, test, and deploy your solution with ongoing support and optimization."
     }
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/30">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Our Proven Process</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {processSteps.map((process, index) => (
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">How We Work</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {steps.map((step, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white font-bold text-xl">{process.step}</span>
-              </div>
-              <h3 className="text-lg font-bold mb-3 text-blue-400">{process.title}</h3>
-              <p className="text-gray-300 text-sm">{process.description}</p>
+              <div className="text-6xl font-bold text-blue-400/20 mb-4">{step.number}</div>
+              <h3 className="text-2xl font-bold mb-4 text-blue-400">{step.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>

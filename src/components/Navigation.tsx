@@ -20,13 +20,15 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-gray-800 z-50">
+    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">T3</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="flex space-x-1">
+              <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+              <div className="w-2.5 h-2.5 bg-purple-500 rounded-full"></div>
+              <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
             </div>
             <span className="text-white font-bold text-xl">TripleDot</span>
           </Link>

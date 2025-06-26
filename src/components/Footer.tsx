@@ -8,35 +8,35 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T3</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="flex space-x-1">
+                <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-purple-500 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
               </div>
               <span className="text-white font-bold text-xl">TripleDot</span>
             </div>
             <p className="text-gray-400 max-w-md">
-              A modern digital operating system connecting services, creativity, and innovation. 
-              We help businesses transform and scale through technology.
+              Services that work. Creative that captivates. Ventures that innovate.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Services</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Development</Link></li>
               <li><Link to="/creative" className="text-gray-400 hover:text-blue-400 transition-colors">Creative</Link></li>
-              <li><Link to="/ventures" className="text-gray-400 hover:text-blue-400 transition-colors">Ventures</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors">About</Link></li>
+              <li><Link to="/ventures" className="text-gray-400 hover:text-blue-400 transition-colors">Innovation</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Get in Touch</h3>
+            <h3 className="text-white font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
-              <li><Link to="/contact" className="text-gray-400 hover:text-blue-400 transition-colors">Contact Us</Link></li>
-              <li><span className="text-gray-400">hello@tripledot.com</span></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-blue-400 transition-colors">Get Started</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</Link></li>
             </ul>
           </div>
         </div>
