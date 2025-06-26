@@ -25,21 +25,40 @@ const HeroSection = () => {
         </div>
 
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-200">
-          The Digital Operating System for Modern Business
+          Three Pillars. One Digital Ecosystem.
         </h2>
+        
+        {/* Three Subdivisions Highlight */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 text-lg">
+          <div className="flex items-center">
+            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+            <span className="text-blue-400 font-semibold">Services</span>
+          </div>
+          <div className="hidden sm:block text-gray-500">•</div>
+          <div className="flex items-center">
+            <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+            <span className="text-purple-400 font-semibold">Creative</span>
+          </div>
+          <div className="hidden sm:block text-gray-500">•</div>
+          <div className="flex items-center">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+            <span className="text-emerald-400 font-semibold">Ventures</span>
+          </div>
+        </div>
+        
         <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
-          Services that work. Creative that captivates. Ventures that innovate.
+          Reliable infrastructure, captivating design, and innovative solutions working together to transform your business.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
           <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
             <Link to="/services" className="flex items-center">
-              Start Your Transformation <ChevronRight className="ml-2 w-4 h-4" />
+              Explore Our Services <ChevronRight className="ml-2 w-4 h-4" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold">
+          <Button size="lg" variant="outline" className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-semibold">
             <Play className="mr-2 w-4 h-4" />
-            <Link to="/ventures">See Our Innovation</Link>
+            <Link to="/ventures">See Innovation</Link>
           </Button>
         </div>
       </div>
