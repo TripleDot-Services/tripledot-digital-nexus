@@ -69,9 +69,9 @@ const CredentialsSection = () => {
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
             return (
-              <Card key={index} className="bg-gray-900/50 border-gray-800 hover:border-gray-600 transition-all duration-300">
+              <Card key={index} className="bg-gray-900/70 border-gray-700 hover:border-gray-600 transition-all duration-300 shadow-lg">
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-lg text-white">{achievement.title}</CardTitle>
@@ -80,7 +80,7 @@ const CredentialsSection = () => {
                   <ul className="space-y-2">
                     {achievement.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full mr-3 flex-shrink-0"></div>
                         {item}
                       </li>
                     ))}
@@ -92,7 +92,7 @@ const CredentialsSection = () => {
         </div>
 
         {/* Team Expertise Stats */}
-        <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-gray-700 rounded-2xl p-8">
+        <div className="bg-gradient-to-r from-gray-900/70 to-gray-800/70 border border-gray-600/50 rounded-2xl p-8 shadow-xl">
           <h3 className="text-2xl font-bold text-center mb-8">Team Expertise</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {teamStats.map((stat, index) => (
@@ -111,19 +111,19 @@ const CredentialsSection = () => {
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="flex items-center space-x-2">
               <Shield className="w-5 h-5 text-emerald-400" />
-              <span className="text-gray-300">Enterprise Security</span>
+              <span className="text-gray-300 font-medium">Enterprise Security</span>
             </div>
             <div className="flex items-center space-x-2">
               <Award className="w-5 h-5 text-yellow-400" />
-              <span className="text-gray-300">Industry Certified</span>
+              <span className="text-gray-300 font-medium">Industry Certified</span>
             </div>
             <div className="flex items-center space-x-2">
               <Users className="w-5 h-5 text-blue-400" />
-              <span className="text-gray-300">Trusted Partners</span>
+              <span className="text-gray-300 font-medium">Trusted Partners</span>
             </div>
             <div className="flex items-center space-x-2">
               <Zap className="w-5 h-5 text-purple-400" />
-              <span className="text-gray-300">Proven Results</span>
+              <span className="text-gray-300 font-medium">Proven Results</span>
             </div>
           </div>
         </div>

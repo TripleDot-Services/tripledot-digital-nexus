@@ -13,13 +13,13 @@ const HeroSection = () => {
         {/* Logo Section */}
         <div className="mb-6">
           <div className="flex items-center justify-center space-x-3 mb-3">
-            <div className="flex space-x-1">
-              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+            <div className="flex space-x-2">
+              <div className="w-4 h-4 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50 animate-pulse"></div>
+              <div className="w-4 h-4 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="w-4 h-4 bg-emerald-500 rounded-full shadow-lg shadow-emerald-500/50 animate-pulse" style={{animationDelay: '0.4s'}}></div>
             </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
             TripleDot
           </h1>
         </div>
@@ -31,17 +31,17 @@ const HeroSection = () => {
         {/* Three Subdivisions Highlight */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 text-lg">
           <div className="flex items-center">
-            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+            <div className="w-3 h-3 bg-blue-500 rounded-full mr-2 shadow-md shadow-blue-500/50"></div>
             <span className="text-blue-400 font-semibold">Services</span>
           </div>
           <div className="hidden sm:block text-gray-500">•</div>
           <div className="flex items-center">
-            <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+            <div className="w-3 h-3 bg-purple-500 rounded-full mr-2 shadow-md shadow-purple-500/50"></div>
             <span className="text-purple-400 font-semibold">Creative</span>
           </div>
           <div className="hidden sm:block text-gray-500">•</div>
           <div className="flex items-center">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+            <div className="w-3 h-3 bg-emerald-500 rounded-full mr-2 shadow-md shadow-emerald-500/50"></div>
             <span className="text-emerald-400 font-semibold">Ventures</span>
           </div>
         </div>
@@ -51,12 +51,12 @@ const HeroSection = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0 shadow-lg">
             <Link to="/services" className="flex items-center">
               Explore Our Services <ChevronRight className="ml-2 w-4 h-4" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-semibold">
+          <Button size="lg" variant="outline" className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-semibold shadow-lg">
             <Play className="mr-2 w-4 h-4" />
             <Link to="/ventures">See Innovation</Link>
           </Button>

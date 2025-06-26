@@ -75,23 +75,23 @@ const InteractivePillars = () => {
             return (
               <Card 
                 key={pillar.id}
-                className={`bg-gray-900/50 border-gray-800 ${pillar.hoverBorder} transition-all duration-300 group cursor-pointer transform ${isActive ? 'scale-105' : 'hover:scale-102'}`}
+                className={`bg-gray-900/70 border-gray-700 ${pillar.hoverBorder} transition-all duration-300 group cursor-pointer transform ${isActive ? 'scale-105' : 'hover:scale-102'} shadow-lg hover:shadow-xl`}
                 onMouseEnter={() => setActivePillar(pillar.id)}
                 onMouseLeave={() => setActivePillar(null)}
               >
                 <CardContent className="p-8">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${pillar.gradient} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className={`w-14 h-14 bg-gradient-to-br ${pillar.gradient} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
                   
                   <h3 className={`text-2xl font-bold mb-4 group-hover:text-${pillar.color}-400 transition-colors`}>{pillar.title}</h3>
                   
-                  <p className="text-gray-400 mb-4">{pillar.description}</p>
+                  <p className="text-gray-400 mb-4 leading-relaxed">{pillar.description}</p>
                   
                   <div className={`space-y-2 mb-6 transition-all duration-300 ${isActive ? 'opacity-100 max-h-40' : 'opacity-70 max-h-32'}`}>
                     {pillar.features.map((feature, index) => (
                       <div key={index} className="flex items-center text-sm text-gray-300">
-                        <div className={`w-1.5 h-1.5 bg-${pillar.color}-400 rounded-full mr-2`}></div>
+                        <div className={`w-2 h-2 bg-${pillar.color}-400 rounded-full mr-3 flex-shrink-0`}></div>
                         {feature}
                       </div>
                     ))}
@@ -100,11 +100,11 @@ const InteractivePillars = () => {
                   <div className="flex items-center justify-between">
                     <Link 
                       to={pillar.link} 
-                      className={`text-${pillar.color}-400 hover:text-${pillar.color}-300 font-medium flex items-center story-link`}
+                      className={`text-${pillar.color}-400 hover:text-${pillar.color}-300 font-medium flex items-center transition-colors`}
                     >
                       Learn More <ChevronRight className="ml-1 w-4 h-4" />
                     </Link>
-                    <div className={`text-xs text-${pillar.color}-400 font-semibold`}>
+                    <div className={`text-xs text-${pillar.color}-400 font-semibold bg-${pillar.color}-400/10 px-2 py-1 rounded-full`}>
                       {pillar.demo}
                     </div>
                   </div>

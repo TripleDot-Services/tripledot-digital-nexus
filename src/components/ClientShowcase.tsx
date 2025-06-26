@@ -30,10 +30,10 @@ const ClientShowcase = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
           {clients.map((client, index) => (
             <div key={index} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg flex items-center justify-center mb-3 group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-800 border border-gray-700/50 rounded-lg flex items-center justify-center mb-3 group-hover:from-blue-600 group-hover:to-purple-600 group-hover:border-blue-500/50 transition-all duration-300 shadow-lg">
                 <span className="text-white font-bold text-lg">{client.logo}</span>
               </div>
-              <p className="text-gray-400 text-sm text-center">{client.name}</p>
+              <p className="text-gray-300 text-sm text-center font-medium">{client.name}</p>
               <p className="text-gray-500 text-xs">{client.industry}</p>
             </div>
           ))}
@@ -64,8 +64,8 @@ const ClientShowcase = () => {
           <h3 className="text-xl font-bold mb-6 text-gray-300">Certifications & Partnerships</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {certifications.map((cert, index) => (
-              <div key={index} className="bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2">
-                <span className="text-gray-300 text-sm">{cert}</span>
+              <div key={index} className="bg-gray-900/70 border border-gray-600/50 rounded-lg px-4 py-2 hover:border-gray-500/50 transition-colors">
+                <span className="text-gray-200 text-sm font-medium">{cert}</span>
               </div>
             ))}
           </div>
