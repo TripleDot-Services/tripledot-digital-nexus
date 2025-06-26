@@ -1,11 +1,13 @@
 
-import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Card } from "@/components/ui/card";
 
 const FAQ = () => {
-  const [openItem, setOpenItem] = useState<number | null>(null);
-
   const faqs = [
     {
       question: "How do the three pillars of TripleDot work together?",
@@ -40,26 +42,21 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
           <p className="text-gray-400 text-lg">Get answers to common questions about working with TripleDot</p>
         </div>
-        <div className="space-y-4">
+        
+        <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <Card key={index} className="bg-gray-900/50 border-gray-800">
-              <CardContent className="p-0">
-                <button
-                  onClick={() => setOpenItem(openItem === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-800/50 transition-colors"
-                >
+            <AccordionItem key={index} value={`item-${index}`} className="border-0">
+              <Card className="bg-gray-900/50 border-gray-800">
+                <AccordionTrigger className="px-6 py-6 text-left hover:no-underline hover:bg-gray-800/50 transition-colors [&[data-state=open]>svg]:rotate-180">
                   <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
-                  <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${openItem === index ? 'rotate-180' : ''}`} />
-                </button>
-                {openItem === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6">
+                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                </AccordionContent>
+              </Card>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
