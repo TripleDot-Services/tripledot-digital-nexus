@@ -46,7 +46,7 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
               Get Started
             </Button>
           </div>
@@ -76,7 +76,7 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="px-4 pt-2">
-              <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
                 Get Started
               </Button>
             </div>

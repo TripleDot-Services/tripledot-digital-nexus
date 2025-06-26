@@ -16,12 +16,12 @@ const CTASection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover-scale">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
                 <Link to="/contact" className="flex items-center">
                   Start Your Journey <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-900 hover-scale">
+              <Button size="lg" variant="outline" className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold">
                 <Calendar className="mr-2 w-4 h-4" />
                 <Link to="/contact">Schedule a Call</Link>
               </Button>

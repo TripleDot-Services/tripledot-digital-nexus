@@ -10,7 +10,7 @@ const VentureCTA = () => {
         <p className="text-xl text-gray-300 mb-8">
           Interested in collaborating on cutting-edge solutions or early access to our ventures?
         </p>
-        <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700">
+        <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold border-0">
           <Link to="/contact">Explore Partnership</Link>
         </Button>
       </div>

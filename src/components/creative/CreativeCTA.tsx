@@ -13,12 +13,12 @@ const CreativeCTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700">
+          <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white font-semibold border-0">
             <Link to="/contact" className="flex items-center">
               Start Your Project <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-900">
+          <Button size="lg" variant="outline" className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white font-semibold">
             <MessageCircle className="mr-2 w-4 h-4" />
             <Link to="/contact">Discuss Your Ideas</Link>
           </Button>

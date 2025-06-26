@@ -11,7 +11,7 @@ const ServiceCTA = () => {
         <p className="text-lg text-gray-300 mb-6">
           Let's discuss your project and create a solution that drives real results.
         </p>
-        <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
           <Link to="/contact" className="flex items-center">
             Start Your Project <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
