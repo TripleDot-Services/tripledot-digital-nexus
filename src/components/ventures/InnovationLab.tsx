@@ -43,7 +43,7 @@ const InnovationLab = () => {
                   <span className="text-gray-300">Decentralized collaboration</span>
                 </li>
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3</div>
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
                   <span className="text-gray-300">Sustainable tech solutions</span>
                 </li>
               </ul>
