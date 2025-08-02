@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +47,7 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
             <Button className="bg-gradient-to-r from-neo-blue to-neo-purple hover:from-neo-purple hover:to-neo-pink text-white font-semibold border-0 rounded-xl glow-primary">
               Get Started
             </Button>
