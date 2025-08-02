@@ -44,6 +44,15 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Extraordinary Color Palette - Light Mode */
+    --neo-blue: 217 91% 60%;
+    --neo-purple: 271 91% 65%;
+    --neo-cyan: 180 100% 70%;
+    --neo-pink: 330 81% 60%;
+    --neo-emerald: 142 76% 36%;
+    --neo-orange: 25 95% 53%;
+    --neo-yellow: 47 96% 53%;
   }
 
   .dark {
