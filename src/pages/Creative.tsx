@@ -12,7 +12,7 @@ import { Settings, Lightbulb } from "lucide-react";
 
 const Creative = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Creative - TripleDot"
         description="Design that converts. Content that captivates. Brands that inspire. Professional creative services for modern businesses."

@@ -13,7 +13,7 @@ import { Settings, Palette } from "lucide-react";
 
 const Ventures = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Ventures - TripleDot"
         description="Our internal innovation and product lab where we build, test, and launch new digital solutions for the future."

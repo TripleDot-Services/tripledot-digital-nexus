@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="About - TripleDot"
         description="Learn about TripleDot's mission, team, and approach to digital transformation, creative design, and technology innovation."
