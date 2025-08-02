@@ -1,6 +1,7 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import VentureHero from "@/components/ventures/VentureHero";
 import VentureMetrics from "@/components/ventures/VentureMetrics";
 import InnovationLab from "@/components/ventures/InnovationLab";
@@ -13,6 +14,11 @@ import { Settings, Palette } from "lucide-react";
 const Ventures = () => {
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO 
+        title="Ventures - TripleDot"
+        description="Our internal innovation and product lab where we build, test, and launch new digital solutions for the future."
+        keywords="innovation lab, product development, digital ventures, technology incubator, startup solutions"
+      />
       <Navigation />
       <VentureHero />
       <VentureMetrics />

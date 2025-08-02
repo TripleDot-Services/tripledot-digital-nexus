@@ -4,10 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-black text-white">
+      <SEO 
+        title="About - TripleDot"
+        description="Learn about TripleDot's mission, team, and approach to digital transformation, creative design, and technology innovation."
+        keywords="about us, company, team, mission, digital agency, technology consulting"
+      />
       <Navigation />
       
       {/* Hero Section */}
