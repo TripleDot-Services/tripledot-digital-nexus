@@ -44,18 +44,18 @@ const HeroSection = () => {
         
         {/* Three Subdivisions Highlight */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 text-lg animate-fade-in-up delay-400">
-          <div className="flex items-center glass px-4 py-2 rounded-full">
+          <Link to="/services" className="flex items-center glass px-4 py-2 rounded-full hover:bg-neo-blue/10 transition-all duration-300">
             <div className="w-3 h-3 bg-neo-blue rounded-full mr-3 glow-primary"></div>
             <span className="text-neo-blue font-semibold">Services</span>
-          </div>
-          <div className="flex items-center glass px-4 py-2 rounded-full">
+          </Link>
+          <Link to="/creative" className="flex items-center glass px-4 py-2 rounded-full hover:bg-neo-purple/10 transition-all duration-300">
             <div className="w-3 h-3 bg-neo-purple rounded-full mr-3 glow-secondary"></div>
             <span className="text-neo-purple font-semibold">Creative</span>
-          </div>
-          <div className="flex items-center glass px-4 py-2 rounded-full">
+          </Link>
+          <Link to="/ventures" className="flex items-center glass px-4 py-2 rounded-full hover:bg-neo-emerald/10 transition-all duration-300">
             <div className="w-3 h-3 bg-neo-emerald rounded-full mr-3 glow-accent"></div>
             <span className="text-neo-emerald font-semibold">Ventures</span>
-          </div>
+          </Link>
         </div>
         
         {/* Badge moved here */}
@@ -66,7 +66,7 @@ const HeroSection = () => {
         
         {/* Core Philosophy */}
         <div className="max-w-4xl mx-auto mb-8 animate-fade-in-up delay-500">
-          <p className="text-xl md:text-2xl lg:text-3xl text-foreground/70 mb-4 leading-relaxed whitespace-nowrap">
+          <p className="text-xl md:text-2xl lg:text-3xl text-foreground/70 mb-4 leading-relaxed whitespace-nowrap text-center">
             Services fund Creative. Creative empowers Ventures. Ventures grow the brand.
           </p>
         </div>
