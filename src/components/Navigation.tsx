@@ -20,17 +20,17 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
+    <nav className="fixed top-0 w-full glass border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 group">
             <div className="flex space-x-1">
-              <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
-              <div className="w-2.5 h-2.5 bg-purple-500 rounded-full"></div>
-              <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-neo-blue rounded-full glow-primary animate-pulse"></div>
+              <div className="w-3 h-3 bg-neo-purple rounded-full glow-secondary animate-pulse" style={{animationDelay: '0.2s'}}></div>
+              <div className="w-3 h-3 bg-neo-emerald rounded-full glow-accent animate-pulse" style={{animationDelay: '0.4s'}}></div>
             </div>
-            <span className="text-white font-bold text-xl">TripleDot</span>
+            <span className="text-foreground font-bold text-xl gradient-text-primary group-hover:gradient-text-secondary transition-all duration-300">TripleDot</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,14 +39,14 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-blue-400 ${
-                  isActive(item.path) ? "text-blue-400" : "text-gray-300"
+                className={`text-sm font-medium transition-colors hover:text-neo-blue ${
+                  isActive(item.path) ? "text-neo-blue" : "text-foreground/70"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
+            <Button className="bg-gradient-to-r from-neo-blue to-neo-purple hover:from-neo-purple hover:to-neo-pink text-white font-semibold border-0 rounded-xl glow-primary">
               Get Started
             </Button>
           </div>
@@ -54,7 +54,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-300 hover:text-white"
+            className="md:hidden text-foreground/70 hover:text-neo-blue"
           >
             <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`} />
           </button>
@@ -62,13 +62,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800">
+          <div className="md:hidden py-4 border-t border-white/10 glass-card">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`block py-2 px-4 text-sm font-medium transition-colors hover:text-blue-400 ${
-                  isActive(item.path) ? "text-blue-400" : "text-gray-300"
+                className={`block py-2 px-4 text-sm font-medium transition-colors hover:text-neo-blue ${
+                  isActive(item.path) ? "text-neo-blue" : "text-foreground/70"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -76,7 +76,7 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="px-4 pt-2">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0">
+              <Button className="w-full bg-gradient-to-r from-neo-blue to-neo-purple hover:from-neo-purple hover:to-neo-pink text-white font-semibold border-0 rounded-xl">
                 Get Started
               </Button>
             </div>
