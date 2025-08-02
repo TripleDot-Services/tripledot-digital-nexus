@@ -19,6 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				'dm-sans': ['DM Sans', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
 				'playfair': ['Playfair Display', 'serif'],
 				'mono': ['JetBrains Mono', 'monospace'],
