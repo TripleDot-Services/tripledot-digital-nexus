@@ -139,7 +139,7 @@ const ServiceQuiz = () => {
             <Button className={`bg-gradient-to-r ${recommendation.color} hover:opacity-90`}>
               Get Started <ChevronRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button variant="outline" onClick={resetQuiz} className="border-gray-600 text-white hover:bg-gray-800">
+            <Button variant="outline-light" onClick={resetQuiz}>
               <RotateCcw className="mr-2 w-4 h-4" />
               Retake Quiz
             </Button>

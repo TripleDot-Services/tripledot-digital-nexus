@@ -114,7 +114,7 @@ const Tools = () => {
                 Schedule Consultation <ChevronRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-900">
+            <Button size="lg" variant="outline-light">
               <Link to="/about">Learn More About Us</Link>
             </Button>
           </div>

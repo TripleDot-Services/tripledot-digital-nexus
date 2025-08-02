@@ -62,7 +62,7 @@ const QuickFAQ = () => {
         </div>
         
         <div className="text-center">
-          <Button variant="outline" className="border-gray-600 text-white hover:bg-gray-900">
+          <Button variant="outline-light">
             <Link to="/faq">View All FAQs</Link>
           </Button>
         </div>
