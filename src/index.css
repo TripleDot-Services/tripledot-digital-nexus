@@ -46,7 +46,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Extraordinary Color Palette - Light Mode */
-    --neo-blue: 217 91% 60%;
+    --neo-blue: 175 53% 68%;
     --neo-purple: 271 91% 65%;
     --neo-cyan: 180 100% 70%;
     --neo-pink: 330 81% 60%;
@@ -94,7 +94,7 @@
     --sidebar-ring: 217 91% 60%;
 
     /* Extraordinary Color Palette - Same vibrant colors in dark mode */
-    --neo-blue: 217 91% 60%;
+    --neo-blue: 175 53% 68%;
     --neo-purple: 271 91% 65%;
     --neo-cyan: 180 100% 70%;
     --neo-pink: 330 81% 60%;
@@ -103,12 +103,12 @@
     --neo-yellow: 47 96% 53%;
     
     /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(271 91% 65%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(175 53% 68%) 0%, hsl(271 91% 65%) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(271 91% 65%) 0%, hsl(330 81% 60%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(180 100% 70%) 100%);
     --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(330 81% 60%) 100%);
-    --gradient-cool: linear-gradient(135deg, hsl(180 100% 70%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(217 91% 60%) 0px, transparent 50%), 
+    --gradient-cool: linear-gradient(135deg, hsl(180 100% 70%) 0%, hsl(175 53% 68%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(175 53% 68%) 0px, transparent 50%), 
                      radial-gradient(at 80% 0%, hsl(271 91% 65%) 0px, transparent 50%), 
                      radial-gradient(at 0% 50%, hsl(330 81% 60%) 0px, transparent 50%), 
                      radial-gradient(at 80% 50%, hsl(142 76% 36%) 0px, transparent 50%), 
@@ -117,7 +117,7 @@
     /* Glass & Glow Effects */
     --glass-bg: rgba(255, 255, 255, 0.02);
     --glass-border: rgba(255, 255, 255, 0.1);
-    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
+    --glow-primary: 0 0 40px hsl(175 53% 68% / 0.3);
     --glow-secondary: 0 0 40px hsl(271 91% 65% / 0.3);
     --glow-accent: 0 0 40px hsl(142 76% 36% / 0.3);
     
@@ -125,7 +125,7 @@
     --shadow-elevation-low: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-elevation-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-elevation-high: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-glow-primary: 0 0 20px hsl(217 91% 60% / 0.4), 0 0 40px hsl(217 91% 60% / 0.2);
+    --shadow-glow-primary: 0 0 20px hsl(175 53% 68% / 0.4), 0 0 40px hsl(175 53% 68% / 0.2);
     --shadow-glow-secondary: 0 0 20px hsl(271 91% 65% / 0.4), 0 0 40px hsl(271 91% 65% / 0.2);
   }
 }
@@ -184,7 +184,7 @@
   
   /* Glow effects */
   .glow-primary {
-    box-shadow: 0 0 40px hsl(217 91% 60% / 0.3), 0 0 80px hsl(217 91% 60% / 0.15);
+    box-shadow: 0 0 40px hsl(175 53% 68% / 0.3), 0 0 80px hsl(175 53% 68% / 0.15);
   }
   
   .glow-secondary {
@@ -202,7 +202,7 @@
   
   /* Animated gradient backgrounds */
   .animated-gradient {
-    background: linear-gradient(45deg, hsl(217 91% 60%), hsl(271 91% 65%), hsl(330 81% 60%), hsl(142 76% 36%));
+    background: linear-gradient(45deg, hsl(175 53% 68%), hsl(271 91% 65%), hsl(330 81% 60%), hsl(142 76% 36%));
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
   }
