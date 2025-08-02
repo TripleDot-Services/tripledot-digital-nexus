@@ -1,7 +1,7 @@
 
 const VentureRoadmap = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Ventures Growth Roadmap</h2>
         <div className="space-y-8">

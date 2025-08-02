@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const InnovationAreas = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-950/50">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Innovation Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

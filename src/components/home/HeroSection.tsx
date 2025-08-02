@@ -19,11 +19,6 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       
       <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center px-6 py-3 mb-8 glass rounded-full animate-fade-in">
-          <Sparkles className="w-4 h-4 mr-2 text-neo-blue animate-pulse-glow" />
-          <span className="text-sm font-medium text-foreground/80">Where Innovation Meets Excellence</span>
-        </div>
         
         {/* Logo Section */}
         <div className="mb-6 animate-fade-in-up">
@@ -61,6 +56,12 @@ const HeroSection = () => {
             <div className="w-3 h-3 bg-neo-emerald rounded-full mr-3 glow-accent"></div>
             <span className="text-neo-emerald font-semibold">Ventures</span>
           </div>
+        </div>
+        
+        {/* Badge moved here */}
+        <div className="inline-flex items-center px-4 py-2 mb-6 glass rounded-full animate-fade-in">
+          <Sparkles className="w-4 h-4 mr-2 text-neo-blue animate-pulse-glow" />
+          <span className="text-sm font-medium text-foreground/80">Where Innovation Meets Excellence</span>
         </div>
         
         {/* Core Philosophy */}

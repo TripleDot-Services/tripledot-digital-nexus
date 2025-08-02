@@ -57,7 +57,7 @@ const InteractivePillars = () => {
   ];
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neo-blue/5 to-transparent"></div>
       <div className="absolute top-40 left-20 w-96 h-96 bg-neo-purple/10 rounded-full blur-3xl animate-pulse"></div>
