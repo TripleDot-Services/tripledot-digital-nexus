@@ -36,22 +36,18 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li className="text-gray-400 text-sm">
-                <div className="font-medium text-gray-300">TripleDot Services</div>
-              </li>
-              <li className="text-gray-400 text-sm">Zinkstraat 24, Nr. A4364</li>
-              <li className="text-gray-400 text-sm">4823AD Breda</li>
-              <li className="text-gray-400 text-sm">The Netherlands</li>
-              <li className="text-gray-400 text-sm">VAT: NL005136013B45</li>
-              <li className="text-gray-400 text-sm">Chamber of Commerce: 95184317</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 TripleDot. Services fund Creative. Creative empowers Ventures. Ventures grow the brand.
+            © 2024 <Link to="/about" className="text-neo-blue hover:text-neo-purple transition-colors">TripleDot Services</Link>. Services fund Creative. Creative empowers Ventures. Ventures grow the brand.
           </p>
+          <div className="mt-2 text-gray-500 text-xs space-y-0.5">
+            <div>Zinkstraat 24, Nr. A4364, 4823AD Breda, The Netherlands</div>
+            <div>VAT: NL005136013B45 | Chamber of Commerce: 95184317</div>
+          </div>
         </div>
       </div>
     </footer>
