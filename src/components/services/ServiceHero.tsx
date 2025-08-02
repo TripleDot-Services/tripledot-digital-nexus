@@ -14,6 +14,13 @@ const ServiceHero = () => {
           <h1 className="text-4xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
             Services That Scale
           </h1>
+          
+          {/* Exclusivity badge */}
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-full mb-6">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm font-medium text-blue-200">Limited to 5 clients • Ensuring agility & premium quality</span>
+          </div>
+          
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
             Technology solutions that work. We handle the complex tech so you can focus on growing your business.
           </p>
