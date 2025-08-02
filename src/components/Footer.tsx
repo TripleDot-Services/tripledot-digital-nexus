@@ -34,21 +34,17 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="text-white font-semibold mb-4">Connect</h3>
-            <ul className="space-y-2 mb-6">
-              <li><Link to="/contact" className="text-gray-400 hover:text-blue-400 transition-colors">Get Started</Link></li>
+            <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</Link></li>
+              <li className="text-gray-400 text-sm">
+                <div className="font-medium text-gray-300">TripleDot Services</div>
+              </li>
+              <li className="text-gray-400 text-sm">Zinkstraat 24, Nr. A4364</li>
+              <li className="text-gray-400 text-sm">4823AD Breda</li>
+              <li className="text-gray-400 text-sm">The Netherlands</li>
+              <li className="text-gray-400 text-sm">VAT: NL005136013B45</li>
+              <li className="text-gray-400 text-sm">Chamber of Commerce: 95184317</li>
             </ul>
-            
-            <div className="text-gray-400 text-sm space-y-1">
-              <div className="font-medium text-gray-300">TripleDot Services</div>
-              <div>Zinkstraat 24, Nr. A4364</div>
-              <div>4823AD Breda</div>
-              <div>The Netherlands</div>
-              <div className="pt-2">
-                <div>VAT: NL005136013B45</div>
-                <div>Chamber of Commerce: 95184317</div>
-              </div>
-            </div>
           </div>
         </div>
 
