@@ -44,8 +44,7 @@ const Footer = () => {
           <p className="text-gray-400 text-sm">
             © 2024 <Link to="/about" className="text-neo-blue hover:text-neo-purple transition-colors">TripleDot Services</Link>. Services fund Creative. Creative empowers Ventures. Ventures grow the brand.
           </p>
-          <div className="mt-2 text-gray-500 text-xs space-y-0.5">
-            <div>Zinkstraat 24, Nr. A4364, 4823AD Breda, The Netherlands</div>
+          <div className="mt-2 text-gray-500 text-xs">
             <div>VAT: NL005136013B45 | Chamber of Commerce: 95184317</div>
           </div>
         </div>
