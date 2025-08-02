@@ -39,6 +39,21 @@ const Footer = () => {
               <li><Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors">About Us</Link></li>
             </ul>
           </div>
+
+          {/* Company Information */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">Company Information</h3>
+            <div className="text-gray-400 text-sm space-y-1">
+              <div className="font-medium text-gray-300">TripleDot Services</div>
+              <div>Zinkstraat 24, Nr. A4364</div>
+              <div>4823AD Breda</div>
+              <div>The Netherlands</div>
+              <div className="pt-2">
+                <div>VAT: NL005136013B45</div>
+                <div>Chamber of Commerce: 95184317</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
