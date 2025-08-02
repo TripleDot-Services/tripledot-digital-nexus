@@ -48,9 +48,13 @@ const Navigation = () => {
               </Link>
             ))}
             <ThemeToggle />
-            <Button className="bg-gradient-to-r from-neo-blue to-neo-purple hover:from-neo-purple hover:to-neo-pink text-white font-semibold border-0 rounded-xl glow-primary">
-              Get Started
-            </Button>
+            <div className="text-xs text-foreground/60 text-right">
+              <div className="font-semibold text-neo-blue">TripleDot Services</div>
+              <div>Zinkstraat 24, Nr. A4364</div>
+              <div>4823AD Breda, The Netherlands</div>
+              <div>VAT: NL005136013B45</div>
+              <div>CoC: 95184317</div>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -77,10 +81,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="px-4 pt-2">
-              <Button className="w-full bg-gradient-to-r from-neo-blue to-neo-purple hover:from-neo-purple hover:to-neo-pink text-white font-semibold border-0 rounded-xl">
-                Get Started
-              </Button>
+            <div className="px-4 pt-2 text-xs text-foreground/60">
+              <div className="font-semibold text-neo-blue">TripleDot Services</div>
+              <div>Zinkstraat 24, Nr. A4364</div>
+              <div>4823AD Breda, The Netherlands</div>
+              <div>VAT: NL005136013B45</div>
+              <div>CoC: 95184317</div>
             </div>
           </div>
         )}
