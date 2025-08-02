@@ -47,7 +47,6 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
