@@ -17,7 +17,9 @@ const Footer = () => {
               <span className="text-white font-bold text-xl">TripleDot</span>
             </div>
             <p className="text-gray-400 max-w-md">
-              Services that work. Creative that captivates. Ventures that innovate.
+              Services that work.<br />
+              Creative that captivates.<br />
+              Ventures that innovate.
             </p>
           </div>
 
