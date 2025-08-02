@@ -84,14 +84,22 @@ const InteractivePillars = () => {
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   
-                  <h3 className={`text-2xl font-bold mb-4 group-hover:text-${pillar.color}-400 transition-colors`}>{pillar.title}</h3>
+                  <h3 className={`text-2xl font-bold mb-4 transition-colors ${
+                    pillar.color === 'blue' ? 'group-hover:text-blue-400' :
+                    pillar.color === 'purple' ? 'group-hover:text-purple-400' :
+                    'group-hover:text-emerald-400'
+                  }`}>{pillar.title}</h3>
                   
                   <p className="text-gray-400 mb-4 leading-relaxed">{pillar.description}</p>
                   
                   <div className={`space-y-2 mb-6 transition-all duration-300 ${isActive ? 'opacity-100 max-h-40' : 'opacity-70 max-h-32'}`}>
                     {pillar.features.map((feature, index) => (
                       <div key={index} className="flex items-center text-sm text-gray-300">
-                        <div className={`w-2 h-2 bg-${pillar.color}-400 rounded-full mr-3 flex-shrink-0`}></div>
+                        <div className={`w-2 h-2 rounded-full mr-3 flex-shrink-0 ${
+                          pillar.color === 'blue' ? 'bg-blue-400' :
+                          pillar.color === 'purple' ? 'bg-purple-400' :
+                          'bg-emerald-400'
+                        }`}></div>
                         {feature}
                       </div>
                     ))}
@@ -100,11 +108,19 @@ const InteractivePillars = () => {
                   <div className="flex items-center justify-between">
                     <Link 
                       to={pillar.link} 
-                      className={`text-${pillar.color}-400 hover:text-${pillar.color}-300 font-medium flex items-center transition-colors`}
+                      className={`font-medium flex items-center transition-colors ${
+                        pillar.color === 'blue' ? 'text-blue-400 hover:text-blue-300' :
+                        pillar.color === 'purple' ? 'text-purple-400 hover:text-purple-300' :
+                        'text-emerald-400 hover:text-emerald-300'
+                      }`}
                     >
                       Learn More <ChevronRight className="ml-1 w-4 h-4" />
                     </Link>
-                    <div className={`text-xs text-${pillar.color}-400 font-semibold bg-${pillar.color}-400/10 px-2 py-1 rounded-full`}>
+                    <div className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                      pillar.color === 'blue' ? 'text-blue-400 bg-blue-400/10' :
+                      pillar.color === 'purple' ? 'text-purple-400 bg-purple-400/10' :
+                      'text-emerald-400 bg-emerald-400/10'
+                    }`}>
                       {pillar.demo}
                     </div>
                   </div>
