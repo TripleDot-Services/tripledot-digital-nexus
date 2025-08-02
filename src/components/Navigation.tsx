@@ -26,12 +26,14 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-14">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="flex space-x-1">
-              <div className="w-3 h-3 bg-neo-blue rounded-full glow-primary animate-pulse"></div>
-              <div className="w-3 h-3 bg-neo-purple rounded-full glow-secondary animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-3 h-3 bg-neo-emerald rounded-full glow-accent animate-pulse" style={{animationDelay: '0.4s'}}></div>
+            <div className="flex space-x-1.5">
+              <div className="w-2.5 h-2.5 bg-neo-blue rounded-full glow-primary animate-pulse shadow-lg"></div>
+              <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg" style={{animationDelay: '0.3s'}}></div>
+              <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full glow-accent animate-pulse shadow-lg" style={{animationDelay: '0.6s'}}></div>
             </div>
-            <span className="text-foreground font-bold text-xl gradient-text-primary group-hover:gradient-text-secondary transition-all duration-300">TripleDot</span>
+            <span className="text-foreground font-dm-sans font-semibold text-lg tracking-wide gradient-text-primary group-hover:gradient-text-secondary transition-all duration-300">
+              TripleDot
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

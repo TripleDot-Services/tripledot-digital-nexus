@@ -9,6 +9,8 @@ import GrowthRoadmap from "@/components/services/GrowthRoadmap";
 import Testimonials from "@/components/Testimonials";
 import CaseStudies from "@/components/CaseStudies";
 import CrossPillarNavigation from "@/components/ui/cross-pillar-navigation";
+import PageTransition from "@/components/ui/page-transition";
+import ScrollToTop from "@/components/ui/scroll-to-top";
 import SEO from "@/components/SEO";
 import { servicesPagePillars } from "@/data/pillars";
 
@@ -22,21 +24,24 @@ const Services = () => {
         url={window.location.href}
       />
       <Navigation />
-      <ServiceHero />
-      <ServiceCategories />
-      <ProcessSteps />
-      <CaseStudies />
-      <Testimonials />
-      <GrowthRoadmap />
-      
-      <CrossPillarNavigation
-        title="Explore Our Other Pillars"
-        pillars={servicesPagePillars}
-        pillarThemes={["purple", "emerald"]}
-      />
-      
-      <ServiceCTA />
+      <PageTransition>
+        <ServiceHero />
+        <ServiceCategories />
+        <ProcessSteps />
+        <CaseStudies />
+        <Testimonials />
+        <GrowthRoadmap />
+        
+        <CrossPillarNavigation
+          title="Explore Our Other Pillars"
+          pillars={servicesPagePillars}
+          pillarThemes={["purple", "emerald"]}
+        />
+        
+        <ServiceCTA />
+      </PageTransition>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
