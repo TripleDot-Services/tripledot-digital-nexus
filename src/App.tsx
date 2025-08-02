@@ -16,6 +16,7 @@ const Creative = lazy(() => import("./pages/Creative"));
 const Ventures = lazy(() => import("./pages/Ventures"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const Tools = lazy(() => import("./pages/Tools"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -65,6 +66,7 @@ const App = () => {
                 <Route path="/creative" element={<Creative />} />
                 <Route path="/ventures" element={<Ventures />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/tools" element={<Tools />} />
                 <Route path="*" element={<NotFound />} />

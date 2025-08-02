@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -73,7 +74,7 @@ const CaseStudies = () => {
         </div>
         <div className="text-center mt-12">
           <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
-            View All Case Studies
+            <Link to="/case-studies">View All Case Studies</Link>
           </Button>
         </div>
       </div>
