@@ -140,14 +140,15 @@
 @layer components {
   /* Glass morphism utilities */
   .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
   
   .glass-card {
     @apply glass rounded-2xl p-6;
-    box-shadow: var(--shadow-elevation-medium);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
   
   /* Gradient text utilities */
@@ -174,15 +175,15 @@
   
   /* Glow effects */
   .glow-primary {
-    box-shadow: var(--glow-primary);
+    box-shadow: 0 0 40px hsl(217 91% 60% / 0.3), 0 0 80px hsl(217 91% 60% / 0.15);
   }
   
   .glow-secondary {
-    box-shadow: var(--glow-secondary);
+    box-shadow: 0 0 40px hsl(271 91% 65% / 0.3), 0 0 80px hsl(271 91% 65% / 0.15);
   }
   
   .glow-accent {
-    box-shadow: var(--glow-accent);
+    box-shadow: 0 0 40px hsl(142 76% 36% / 0.3), 0 0 80px hsl(142 76% 36% / 0.15);
   }
   
   /* Mesh gradient background */
