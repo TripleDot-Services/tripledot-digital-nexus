@@ -65,7 +65,7 @@ const HeroSection = () => {
         </div>
         
         {/* Core Philosophy */}
-        <div className="max-w-4xl mx-auto mb-8 animate-fade-in-up delay-500">
+        <div className="max-w-4xl mx-auto mb-8 animate-fade-in-up delay-500 flex items-center justify-center">
           <p className="text-xl md:text-2xl lg:text-3xl text-foreground/70 mb-4 leading-relaxed whitespace-nowrap text-center">
             Services fund Creative. Creative empowers Ventures. Ventures grow the brand.
           </p>
