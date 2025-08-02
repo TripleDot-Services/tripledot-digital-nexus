@@ -25,8 +25,8 @@ const HeroSection = () => {
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="flex space-x-2">
               <div className="w-6 h-6 bg-neo-blue rounded-full shadow-lg glow-primary animate-pulse"></div>
-              <div className="w-6 h-6 bg-neo-purple rounded-full shadow-lg glow-secondary animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-6 h-6 bg-neo-emerald rounded-full shadow-lg glow-accent animate-pulse" style={{animationDelay: '0.4s'}}></div>
+              <div className="w-6 h-6 bg-neo-purple rounded-full shadow-lg glow-secondary animate-pulse" style={{animationDelay: '0.3s'}}></div>
+              <div className="w-6 h-6 bg-neo-emerald rounded-full shadow-lg glow-accent animate-pulse" style={{animationDelay: '0.6s'}}></div>
             </div>
           </div>
         </div>
