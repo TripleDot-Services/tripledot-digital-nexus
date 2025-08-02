@@ -5,7 +5,7 @@ import ServiceHero from "@/components/services/ServiceHero";
 import ServiceCategories from "@/components/services/ServiceCategories";
 import ProcessSteps from "@/components/services/ProcessSteps";
 import ServiceCTA from "@/components/services/ServiceCTA";
-import GrowthRoadmap from "@/components/services/GrowthRoadmap";
+
 import Testimonials from "@/components/Testimonials";
 import CaseStudies from "@/components/CaseStudies";
 import CrossPillarNavigation from "@/components/ui/cross-pillar-navigation";
@@ -30,7 +30,7 @@ const Services = () => {
         <ProcessSteps />
         <CaseStudies />
         <Testimonials />
-        <GrowthRoadmap />
+        
         
         <CrossPillarNavigation
           title="Explore Our Other Pillars"
