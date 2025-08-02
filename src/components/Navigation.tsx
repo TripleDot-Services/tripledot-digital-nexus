@@ -32,7 +32,7 @@ const Navigation = () => {
               <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg" style={{animationDelay: '0.3s'}}></div>
               <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full glow-accent animate-pulse shadow-lg" style={{animationDelay: '0.6s'}}></div>
             </div>
-            <span className="text-foreground font-dm-sans font-semibold text-lg tracking-wide gradient-text-primary group-hover:gradient-text-secondary transition-all duration-300">
+            <span className="text-foreground font-dm-sans font-semibold text-lg tracking-wide gradient-text-secondary transition-all duration-300">
               TripleDot
             </span>
           </Link>

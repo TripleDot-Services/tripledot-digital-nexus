@@ -33,8 +33,8 @@ const HeroSection = () => {
         
         {/* Main heading */}
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-fade-in-up delay-200">
-          <span className="gradient-text-primary">Triple</span>
-          <span className="gradient-text-secondary">Dot</span>
+          <span className="gradient-text-secondary">Triple</span>
+          <span className="gradient-text-primary">Dot</span>
         </h1>
         
         {/* Subtitle */}
