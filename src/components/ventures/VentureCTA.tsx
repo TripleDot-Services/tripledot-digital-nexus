@@ -8,13 +8,13 @@ const VentureCTA = () => {
           Interested in collaborating on cutting-edge solutions or early access to our ventures?
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold border-0">
+          <Button size="lg" className="bg-neo-blue hover:bg-neo-blue/80 text-white font-semibold border-0">
             <Link to="/contact">Explore Partnerships</Link>
           </Button>
-          <Button size="lg" variant="outline-light">
+          <Button size="lg" className="bg-neo-purple hover:bg-neo-purple/80 text-white font-semibold border-0">
             <Link to="/contact">Retainer Plans</Link>
           </Button>
-          <Button size="lg" variant="outline-light">
+          <Button size="lg" className="bg-neo-emerald hover:bg-neo-emerald/80 text-white font-semibold border-0">
             <Link to="/contact">Get a Quote</Link>
           </Button>
         </div>
