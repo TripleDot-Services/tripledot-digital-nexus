@@ -7,9 +7,14 @@ const VentureCTA = () => {
         <p className="text-xl text-gray-300 mb-8">
           Interested in collaborating on cutting-edge solutions or early access to our ventures?
         </p>
-        <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold border-0">
-          <Link to="/contact">Explore Partnerships</Link>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold border-0">
+            <Link to="/contact">Retainer Plans</Link>
+          </Button>
+          <Button size="lg" variant="outline-light">
+            <Link to="/contact">Get a Quote</Link>
+          </Button>
+        </div>
       </div>
     </section>;
 };
