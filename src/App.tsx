@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LoadingSpinner from "./components/ui/loading-spinner";
 import Navigation from "./components/Navigation";
+import PageNavigation from "./components/ui/page-navigation";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -61,6 +62,7 @@ const App = () => {
           <BrowserRouter>
             <ScrollToTop />
             <Navigation />
+            <PageNavigation />
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Index />} />
