@@ -1,12 +1,9 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Home, Info } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 
 const PageNavigation = () => {
   const location = useLocation();
-  const [visitHistory, setVisitHistory] = useState<string[]>([]);
   
   const pages = [
     { name: "Home", path: "/", color: "neo-emerald" },
@@ -15,33 +12,17 @@ const PageNavigation = () => {
     { name: "Ventures", path: "/ventures", color: "neo-orange" },
   ];
 
-  // Track visit history
-  useEffect(() => {
-    const currentPath = location.pathname;
-    setVisitHistory(prev => {
-      if (prev[prev.length - 1] !== currentPath) {
-        const newHistory = [...prev, currentPath];
-        // Keep only last 4 unique pages
-        const uniqueHistory = Array.from(new Set(newHistory.reverse())).reverse();
-        return uniqueHistory.slice(-4);
-      }
-      return prev;
-    });
-  }, [location.pathname]);
-
   const currentIndex = pages.findIndex(page => page.path === location.pathname);
   const isHomePage = location.pathname === "/";
   
   // Don't show navigation on other pages (not home or main pages)
   if (currentIndex === -1 && !isHomePage) return null;
 
-  // Get history for left navigation (excluding current page)
-  // If on home page, show empty history
-  const historyPages = isHomePage ? [] : visitHistory
-    .slice(0, -1) // Remove current page
-    .map(path => pages.find(page => page.path === path))
-    .filter((page): page is NonNullable<typeof page> => page !== undefined);
-    // Keep original order (don't reverse)
+  // Get static hierarchy - show pages up to current page (excluding current)
+  const hierarchyPages = isHomePage ? [] : pages.slice(0, currentIndex);
+  
+  // Get previous page for back navigation
+  const previousPage = currentIndex > 0 ? pages[currentIndex - 1] : null;
 
   let nextPage = null;
 
@@ -74,11 +55,11 @@ const PageNavigation = () => {
 
 
       {/* Left Side Navigation */}
-      {historyPages.length > 0 && (
+      {(hierarchyPages.length > 0 || previousPage) && (
         <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-between py-4">
-          {/* Visit History Stack */}
+          {/* Static Hierarchy Stack */}
           <div className="flex flex-col gap-2">
-            {historyPages.map((page, index) => (
+            {hierarchyPages.map((page, index) => (
               <Link key={`${page.path}-${index}`} to={page.path} className="flex items-center justify-center hover:bg-background/30 transition-all duration-300 group p-2 rounded-lg">
                 <div className={`writing-mode-vertical text-xs font-medium ${page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
                   {page.name}
@@ -87,14 +68,29 @@ const PageNavigation = () => {
             ))}
           </div>
           
-          {/* Main Navigation - Center */}
-          <Link to={historyPages[0]?.path || "/"} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
-            <ChevronLeft className={`w-8 h-8 ${historyPages[0]?.path === "/" ? "text-white" : historyPages[0]?.color === "neo-emerald" ? "text-neo-emerald" : historyPages[0]?.color === "neo-blue" ? "text-neo-blue" : historyPages[0]?.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-2`} />
-            <div className={`writing-mode-vertical text-xs font-medium ${historyPages[0]?.path === "/" ? "text-white/70 group-hover:text-white" : historyPages[0]?.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : historyPages[0]?.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : historyPages[0]?.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-              {historyPages[0]?.path === "/" ? "Back" : historyPages[0]?.name || "Back"}
+          {/* Back Navigation - Center */}
+          {previousPage && (
+            <Link to={previousPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <ChevronLeft className={`w-8 h-8 ${previousPage.path === "/" ? "text-white" : previousPage.color === "neo-emerald" ? "text-neo-emerald" : previousPage.color === "neo-blue" ? "text-neo-blue" : previousPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-2`} />
+              <div className="writing-mode-vertical text-xs font-medium text-white/70 group-hover:text-white transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+                Back
+              </div>
+            </Link>
+          )}
+          
+          {/* About Us Navigation - Bottom */}
+          <Link to="/about" className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+            <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-2" />
+            <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+              About
             </div>
           </Link>
-          
+        </div>
+      )}
+
+      {/* Show only About Us on Home page */}
+      {isHomePage && (
+        <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-end py-4">
           {/* About Us Navigation - Bottom */}
           <Link to="/about" className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
             <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-2" />
