@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PageNavigation = () => {
@@ -20,38 +20,54 @@ const PageNavigation = () => {
   const nextPage = currentIndex < pages.length - 1 ? pages[currentIndex + 1] : null;
 
   return (
-    <div className="fixed top-1/2 -translate-y-1/2 w-full pointer-events-none z-40">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Previous Page Arrow */}
-        {prevPage && (
-          <Link to={prevPage.path} className="pointer-events-auto">
-            <Button
-              variant="ghost"
-              size="icon"
-              className={`glass-card hover:scale-110 transition-all duration-300 hover:text-${prevPage.color} hover:glow-primary`}
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </Button>
-          </Link>
-        )}
+    <>
+      {/* Side Navigation Arrows */}
+      <div className="fixed top-1/2 -translate-y-1/2 w-full pointer-events-none z-40">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          {/* Previous Page Arrow */}
+          {prevPage && (
+            <Link to={prevPage.path} className="pointer-events-auto">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`glass-card hover:scale-110 transition-all duration-300 hover:text-${prevPage.color} hover:glow-primary`}
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </Button>
+            </Link>
+          )}
 
-        {/* Spacer when no prev page */}
-        {!prevPage && <div />}
+          {/* Spacer when no prev page */}
+          {!prevPage && <div />}
 
-        {/* Next Page Arrow */}
-        {nextPage && (
-          <Link to={nextPage.path} className="pointer-events-auto">
-            <Button
-              variant="ghost"
-              size="icon"
-              className={`glass-card hover:scale-110 transition-all duration-300 hover:text-${nextPage.color} hover:glow-primary`}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </Button>
-          </Link>
-        )}
+          {/* Next Page Arrow */}
+          {nextPage && (
+            <Link to={nextPage.path} className="pointer-events-auto">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`glass-card hover:scale-110 transition-all duration-300 hover:text-${nextPage.color} hover:glow-primary`}
+              >
+                <ChevronRight className="w-6 h-6" />
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
+
+      {/* Home Button */}
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 pointer-events-none z-40">
+        <Link to="/" className="pointer-events-auto">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="glass-card hover:scale-110 transition-all duration-300 hover:text-neo-emerald hover:glow-accent"
+          >
+            <Home className="w-6 h-6" />
+          </Button>
+        </Link>
+      </div>
+    </>
   );
 };
 
