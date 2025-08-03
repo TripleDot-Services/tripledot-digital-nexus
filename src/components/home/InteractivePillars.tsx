@@ -93,7 +93,7 @@ const InteractivePillars = () => {
                 onMouseEnter={() => setActivePillar(pillar.id)}
                 onMouseLeave={() => setActivePillar(null)}
               >
-                <CardContent className="p-8 relative overflow-hidden h-full">
+                <CardContent className="p-8 relative overflow-hidden h-full flex flex-col">
                   {/* Background glow */}
                   <div className={`absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity ${
                     pillar.color === 'neo-blue' ? 'from-neo-blue to-neo-cyan' :
@@ -124,7 +124,7 @@ const InteractivePillars = () => {
                   
                   <p className="text-foreground/60 mb-6 leading-relaxed relative z-10">{pillar.description}</p>
                   
-                  <div className={`space-y-3 mb-8 transition-all duration-300 relative z-10 ${
+                  <div className={`space-y-3 mb-8 flex-grow transition-all duration-300 relative z-10 ${
                     isActive ? 'opacity-100 max-h-40' : 'opacity-80 max-h-32'
                   }`}>
                     {pillar.features.map((feature, featureIndex) => (
@@ -140,7 +140,7 @@ const InteractivePillars = () => {
                   </div>
                   
                   {/* Stats */}
-                  <div className="glass p-4 rounded-xl mb-6 relative z-10">
+                  <div className="glass p-4 rounded-xl mb-6 relative z-10 mt-auto">
                     <div className={`text-2xl font-bold mb-1 ${
                       pillar.color === 'neo-blue' ? 'text-neo-blue' :
                       pillar.color === 'neo-purple' ? 'text-neo-purple' :
