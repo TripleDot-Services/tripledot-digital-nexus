@@ -52,21 +52,28 @@ const PageNavigation = () => {
 
       {/* Left Side Navigation */}
       {prevPage && (
-        <Link to={prevPage.path} className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-          <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
-          <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : prevPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-            {prevPage.name}
+        <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col">
+          {/* Main Navigation - Center */}
+          <div className="flex-1 flex items-center justify-center">
+            <Link to={prevPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
+              <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : prevPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+                {prevPage.name}
+              </div>
+            </Link>
           </div>
-        </Link>
-      )}
-
-      {/* About Us Navigation - Bottom Left */}
-      <Link to="/about" className="fixed left-0 bottom-4 w-16 h-16 glass bg-background/20 backdrop-blur-md border border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group rounded-lg">
-        <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-1" />
-        <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-          About
+          
+          {/* About Us Navigation - Bottom */}
+          <div className="pb-4">
+            <Link to="/about" className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-2" />
+              <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+                About
+              </div>
+            </Link>
+          </div>
         </div>
-      </Link>
+      )}
 
       {/* Right Side Navigation */}
       {nextPage && (
