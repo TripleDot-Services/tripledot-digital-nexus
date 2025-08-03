@@ -50,19 +50,6 @@ const PageNavigation = () => {
           </div>
         </Link>
       )}
-
-      {/* Home Button */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 pointer-events-none z-40">
-        <Link to="/" className="pointer-events-auto">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="glass-card hover:scale-110 transition-all duration-300 hover:text-neo-emerald hover:glow-accent"
-          >
-            <Home className="w-6 h-6" />
-          </Button>
-        </Link>
-      </div>
     </>
   );
 };
