@@ -91,8 +91,8 @@ const PageNavigation = () => {
           
           {/* Main Navigation - Center */}
           <div className="flex-1 flex items-center justify-center">
-            <Link to={historyPages[0]?.path || "/"} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
-              <ChevronLeft className={`w-8 h-8 ${historyPages[0]?.color === "neo-emerald" ? "text-neo-emerald" : historyPages[0]?.color === "neo-blue" ? "text-neo-blue" : historyPages[0]?.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
+            <Link to={historyPages[0]?.path || "/"} className="flex items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <ChevronLeft className={`w-8 h-8 ${historyPages[0]?.path === "/" ? "text-white" : historyPages[0]?.color === "neo-emerald" ? "text-neo-emerald" : historyPages[0]?.color === "neo-blue" ? "text-neo-blue" : historyPages[0]?.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
             </Link>
           </div>
           
