@@ -25,8 +25,8 @@ const Navigation = () => {
           <Link to="/" className="absolute left-0 flex items-center space-x-3 group">
             <div className="flex space-x-1.5">
               <div className="w-2.5 h-2.5 bg-neo-blue rounded-full glow-primary animate-pulse shadow-lg"></div>
-              <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg" style={{animationDelay: '0.3s'}}></div>
-              <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full glow-accent animate-pulse shadow-lg" style={{animationDelay: '0.6s'}}></div>
+              <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg"></div>
+              <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full glow-accent animate-pulse shadow-lg"></div>
             </div>
             <span className="text-foreground font-dm-sans font-semibold text-lg tracking-wide gradient-text-secondary transition-all duration-300">
               TripleDot
