@@ -26,10 +26,10 @@ const Navigation = () => {
   return (
     <>
       <nav className="fixed top-0 w-full glass border-b border-white/10 z-50">
-        <div className="w-full px-3 sm:px-4 lg:px-6 h-16">
+        <div className="w-full px-3 sm:px-4 lg:px-6 lg:pl-52 h-16">
           <div className="flex justify-center items-center h-full relative max-w-7xl mx-auto">
-            {/* Logo */}
-            <Link to="/" className="absolute left-0 flex items-center space-x-3 group">
+            {/* Mobile Logo */}
+            <Link to="/" className="absolute left-0 flex items-center space-x-3 group lg:hidden">
               <div className="flex space-x-1.5">
                 <div className="w-2.5 h-2.5 bg-neo-blue rounded-full glow-primary animate-pulse shadow-lg"></div>
                 <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg"></div>
