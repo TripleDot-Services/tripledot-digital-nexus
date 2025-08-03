@@ -1,5 +1,4 @@
 
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ScrollToTop from "@/components/ui/scroll-to-top";
@@ -17,7 +16,6 @@ const Index = () => {
         description="Reliable infrastructure, captivating design, and innovative solutions working together to transform your business."
         keywords="digital transformation, web development, creative design, innovation, technology ventures"
       />
-      <Navigation />
       <PageTransition>
         <HeroSection />
         <InteractivePillars />

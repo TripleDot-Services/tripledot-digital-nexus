@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ServiceQuiz from "@/components/ServiceQuiz";
 import ROICalculator from "@/components/ROICalculator";
@@ -52,8 +51,6 @@ const Tools = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">

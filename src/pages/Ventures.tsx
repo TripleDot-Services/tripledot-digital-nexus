@@ -1,5 +1,4 @@
 
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
@@ -21,7 +20,6 @@ const Ventures = () => {
         description="Our internal innovation and product lab where we build, test, and launch new digital solutions for the future."
         keywords="innovation lab, product development, digital ventures, technology incubator, startup solutions"
       />
-      <Navigation />
       <PageTransition>
         <VentureHero />
         <VentureMetrics />

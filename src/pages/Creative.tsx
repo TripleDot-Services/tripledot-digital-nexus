@@ -1,5 +1,4 @@
 
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
@@ -20,7 +19,6 @@ const Creative = () => {
         description="Design that converts. Content that captivates. Brands that inspire. Professional creative services for modern businesses."
         keywords="web design, brand identity, content creation, digital marketing, creative services"
       />
-      <Navigation />
       <PageTransition>
         <CreativeHero />
         <CreativeShowcase />

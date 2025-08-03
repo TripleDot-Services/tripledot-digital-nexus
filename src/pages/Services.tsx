@@ -1,5 +1,4 @@
 
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ServiceHero from "@/components/services/ServiceHero";
 import ServiceCategories from "@/components/services/ServiceCategories";
@@ -23,7 +22,6 @@ const Services = () => {
         keywords="managed hosting, cloud services, digital transformation, IT services, workflow automation, security services"
         url={window.location.href}
       />
-      <Navigation />
       <PageTransition>
         <ServiceHero />
         <ServiceCategories />

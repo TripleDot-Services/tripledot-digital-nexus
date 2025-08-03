@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
@@ -54,8 +53,6 @@ const Contact = () => {
         description="Get in touch with TripleDot for digital transformation, creative design, and technology innovation services."
         keywords="contact, consultation, digital services, web design, technology consulting"
       />
-      <Navigation />
-      
       <PageTransition>
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">

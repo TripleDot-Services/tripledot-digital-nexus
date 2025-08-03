@@ -2,7 +2,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
@@ -16,8 +15,6 @@ const About = () => {
         description="Learn about TripleDot's mission, team, and approach to digital transformation, creative design, and technology innovation."
         keywords="about us, company, team, mission, digital agency, technology consulting"
       />
-      <Navigation />
-      
       <PageTransition>
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">

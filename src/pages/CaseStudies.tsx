@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Calendar, Users, TrendingUp, Clock, Target, Award } from "lucide-react";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
@@ -137,8 +136,6 @@ const CaseStudies = () => {
         description="Real success stories from our partnerships. See how TripleDot's services, creative solutions, and innovative ventures drive measurable results for our clients."
         keywords="case studies, success stories, client results, digital transformation, brand design, innovation solutions"
       />
-      <Navigation />
-      
       <PageTransition>
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
