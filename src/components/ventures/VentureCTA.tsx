@@ -9,6 +9,9 @@ const VentureCTA = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold border-0">
+            <Link to="/contact">Explore Partnerships</Link>
+          </Button>
+          <Button size="lg" variant="outline-light">
             <Link to="/contact">Retainer Plans</Link>
           </Button>
           <Button size="lg" variant="outline-light">
