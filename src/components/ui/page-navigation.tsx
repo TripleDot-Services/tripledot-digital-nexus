@@ -53,6 +53,16 @@ const PageNavigation = () => {
       {/* Left Side Navigation */}
       {prevPage && (
         <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col">
+          {/* Last Page Navigation - Top */}
+          <div className="pt-4">
+            <Link to="/ventures" className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <ChevronLeft className="w-6 h-6 text-neo-orange group-hover:scale-110 transition-transform duration-300 mb-2" />
+              <div className="writing-mode-vertical text-xs font-medium text-neo-orange/70 group-hover:text-neo-orange transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+                Last
+              </div>
+            </Link>
+          </div>
+          
           {/* Main Navigation - Center */}
           <div className="flex-1 flex items-center justify-center">
             <Link to={prevPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
