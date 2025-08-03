@@ -56,11 +56,11 @@ const PageNavigation = () => {
 
       {/* Left Side Navigation */}
       {(hierarchyPages.length > 0 || previousPage) && (
-        <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col py-4">
+        <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 relative">
           {/* Static Hierarchy Stack - Top Area */}
-          <div className="flex flex-col gap-2 overflow-y-auto flex-shrink-0" style={{maxHeight: 'calc(50vh - 8rem)'}}>
+          <div className="absolute top-4 left-0 right-0 flex flex-col gap-2 overflow-y-auto" style={{maxHeight: 'calc(50vh - 6rem)'}}>
             {hierarchyPages.map((page, index) => (
-              <Link key={`${page.path}-${index}`} to={page.path} className="flex items-center justify-center hover:bg-background/30 transition-all duration-300 group p-2 rounded-lg">
+              <Link key={`${page.path}-${index}`} to={page.path} className="flex items-center justify-center hover:bg-background/30 transition-all duration-300 group p-2 rounded-lg mx-1">
                 <div className={`writing-mode-vertical text-xs font-medium ${page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
                   {page.name}
                 </div>
@@ -68,12 +68,9 @@ const PageNavigation = () => {
             ))}
           </div>
           
-          {/* Flexible spacer */}
-          <div className="flex-1" />
-          
-          {/* Back Navigation - Fixed Middle Position */}
+          {/* Back Navigation - Fixed Center Position */}
           {previousPage && (
-            <div className="flex items-center justify-center py-4">
+            <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 flex items-center justify-center">
               <Link to={previousPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
                 <ChevronLeft className={`w-8 h-8 ${previousPage.path === "/" ? "text-white" : previousPage.color === "neo-emerald" ? "text-neo-emerald" : previousPage.color === "neo-blue" ? "text-neo-blue" : previousPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-2`} />
                 <div className="writing-mode-vertical text-xs font-medium text-white/70 group-hover:text-white transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
@@ -83,11 +80,8 @@ const PageNavigation = () => {
             </div>
           )}
           
-          {/* Flexible spacer */}
-          <div className="flex-1" />
-          
           {/* About Us Navigation - Fixed Bottom */}
-          <div className="flex items-center justify-center">
+          <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center">
             <Link to="/about" className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
               <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-2" />
               <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
