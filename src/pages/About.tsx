@@ -6,10 +6,11 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
 import ScrollToTop from "@/components/ui/scroll-to-top";
+import PageLayout from "@/components/ui/page-layout";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <PageLayout>
       <SEO 
         title="About - TripleDot"
         description="Learn about TripleDot's mission, team, and approach to digital transformation, creative design, and technology innovation."
@@ -212,7 +213,7 @@ const About = () => {
 
       <Footer />
       <ScrollToTop />
-    </div>
+    </PageLayout>
   );
 };
 

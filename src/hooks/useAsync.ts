@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 interface AsyncState<T> {
   data: T | null;
@@ -17,11 +17,14 @@ export function useAsync<T>(
     error: null,
   });
 
+  const asyncFunctionRef = useRef(asyncFunction);
+  asyncFunctionRef.current = asyncFunction;
+
   const execute = useCallback(async () => {
     setState({ data: null, loading: true, error: null });
     
     try {
-      const result = await asyncFunction();
+      const result = await asyncFunctionRef.current();
       setState({ data: result, loading: false, error: null });
     } catch (error) {
       setState({ 
@@ -30,11 +33,12 @@ export function useAsync<T>(
         error: error instanceof Error ? error : new Error('An unknown error occurred')
       });
     }
-  }, dependencies);
+  }, [asyncFunctionRef]);
 
   useEffect(() => {
     execute();
-  }, [execute]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [execute, ...dependencies]);
 
   return { ...state, refetch: execute };
 }

@@ -10,6 +10,8 @@ const Navigation = () => {
     { name: "Services", path: "/services" },
     { name: "Creative", path: "/creative" },
     { name: "Ventures", path: "/ventures" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const allPages = [
@@ -19,14 +21,16 @@ const Navigation = () => {
     { name: "Ventures", path: "/ventures", color: "neo-orange" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string): boolean => {
+    return location.pathname === path;
+  };
   const currentIndex = allPages.findIndex(page => page.path === location.pathname);
   const isHomePage = location.pathname === "/";
 
   return (
     <>
       <nav className="fixed top-0 w-full glass border-b border-white/10 z-40">
-        <div className="w-full px-3 sm:px-4 lg:px-6 lg:pl-52 h-16">
+        <div className="w-full px-3 sm:px-4 lg:px-6 lg:pl-48 h-16">
           <div className="flex justify-between items-center h-full max-w-7xl mx-auto">
             {/* Mobile Logo */}
             <Link to="/" className="flex items-center space-x-3 group lg:hidden">
@@ -90,6 +94,16 @@ const Navigation = () => {
                       hover: "hover:text-neo-orange",
                       active: "text-neo-orange"
                     };
+                  case "About":
+                    return {
+                      hover: "hover:text-neo-emerald",
+                      active: "text-neo-emerald"
+                    };
+                  case "Contact":
+                    return {
+                      hover: "hover:text-neo-blue",
+                      active: "text-neo-blue"
+                    };
                   default:
                     return {
                       hover: "hover:text-neo-blue",
@@ -131,7 +145,7 @@ const Navigation = () => {
         }
 
         return nextPage ? (
-          <Link to={nextPage.path} className="fixed right-0 top-32 h-[calc(100vh-8rem)] w-16 glass bg-background/20 backdrop-blur-md border-l border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <Link to={nextPage.path} className="fixed right-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-l border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group hidden lg:flex">
             <ChevronRight className={`w-8 h-8 ${nextPage.path === "/" ? "text-white" : nextPage.color === "neo-blue" ? "text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
             <div className={`writing-mode-vertical text-xs font-medium ${nextPage.path === "/" ? "text-white/70 group-hover:text-white" : nextPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300 mt-2`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
               {nextPage.name}
