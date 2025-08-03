@@ -93,7 +93,7 @@ const InteractivePillars = () => {
                 onMouseEnter={() => setActivePillar(pillar.id)}
                 onMouseLeave={() => setActivePillar(null)}
               >
-                <CardContent className="p-8 relative overflow-hidden">
+                <CardContent className="p-8 relative overflow-hidden h-full">
                   {/* Background glow */}
                   <div className={`absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity ${
                     pillar.color === 'neo-blue' ? 'from-neo-blue to-neo-cyan' :
