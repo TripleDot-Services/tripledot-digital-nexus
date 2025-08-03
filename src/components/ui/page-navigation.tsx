@@ -21,39 +21,25 @@ const PageNavigation = () => {
 
   return (
     <>
-      {/* Side Navigation Arrows */}
-      <div className="fixed top-1/2 -translate-y-1/2 w-full pointer-events-none z-40">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          {/* Previous Page Arrow */}
-          {prevPage && (
-            <Link to={prevPage.path} className="pointer-events-auto">
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`glass-card hover:scale-110 transition-all duration-300 hover:text-${prevPage.color} hover:glow-primary`}
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </Button>
-            </Link>
-          )}
+      {/* Left Side Navigation */}
+      {prevPage && (
+        <Link to={prevPage.path} className="fixed left-0 top-0 h-full w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <ChevronLeft className={`w-8 h-8 text-${prevPage.color} group-hover:scale-110 transition-transform duration-300 mb-4`} />
+          <div className="writing-mode-vertical text-sm font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+            {prevPage.name}
+          </div>
+        </Link>
+      )}
 
-          {/* Spacer when no prev page */}
-          {!prevPage && <div />}
-
-          {/* Next Page Arrow */}
-          {nextPage && (
-            <Link to={nextPage.path} className="pointer-events-auto">
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`glass-card hover:scale-110 transition-all duration-300 hover:text-${nextPage.color} hover:glow-primary`}
-              >
-                <ChevronRight className="w-6 h-6" />
-              </Button>
-            </Link>
-          )}
-        </div>
-      </div>
+      {/* Right Side Navigation */}
+      {nextPage && (
+        <Link to={nextPage.path} className="fixed right-0 top-0 h-full w-16 glass bg-background/20 backdrop-blur-md border-l border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <ChevronRight className={`w-8 h-8 text-${nextPage.color} group-hover:scale-110 transition-transform duration-300 mb-4`} />
+          <div className="writing-mode-vertical text-sm font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+            {nextPage.name}
+          </div>
+        </Link>
+      )}
 
       {/* Home Button */}
       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 pointer-events-none z-40">
