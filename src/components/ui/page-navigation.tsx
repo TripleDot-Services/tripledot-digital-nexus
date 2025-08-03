@@ -36,7 +36,7 @@ const PageNavigation = () => {
   const historyPages = visitHistory
     .slice(0, -1) // Remove current page
     .map(path => pages.find(page => page.path === path))
-    .filter(Boolean)
+    .filter((page): page is NonNullable<typeof page> => page !== undefined)
     .reverse(); // Most recent first
 
   let nextPage = null;
