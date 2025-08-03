@@ -102,7 +102,7 @@ const InteractivePillars = () => {
                   }`}></div>
                   
                   {/* Floating decoration */}
-                  <div className={`absolute top-4 right-4 w-8 h-8 rounded-full opacity-20 animate-float ${
+                  <div className={`absolute top-8 right-4 w-8 h-8 rounded-full opacity-20 animate-float ${
                     pillar.color === 'neo-blue' ? 'bg-neo-blue' :
                     pillar.color === 'neo-purple' ? 'bg-neo-purple' :
                     'bg-neo-emerald'
