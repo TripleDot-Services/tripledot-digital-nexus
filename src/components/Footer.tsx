@@ -8,13 +8,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="flex space-x-1">
-                <div className="w-2.5 h-2.5 bg-neo-blue rounded-full"></div>
-                <div className="w-2.5 h-2.5 bg-neo-purple rounded-full"></div>
-                <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full"></div>
+            <div className="flex items-center space-x-3 mb-4 group">
+              <div className="flex space-x-1.5">
+                <div className="w-2.5 h-2.5 bg-neo-blue rounded-full glow-primary animate-pulse shadow-lg"></div>
+                <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg"></div>
+                <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full glow-accent animate-pulse shadow-lg"></div>
               </div>
-              <span className="text-white font-bold text-xl">TripleDot</span>
+              <span className="text-foreground font-dm-sans font-semibold text-lg tracking-wide gradient-text-secondary transition-all duration-300">
+                TripleDot
+              </span>
             </div>
             <p className="text-gray-400 max-w-md">
               Services that work.<br />
