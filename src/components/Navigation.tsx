@@ -24,7 +24,7 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full glass border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-        <div className="flex justify-between items-center h-14">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="flex space-x-1.5">
