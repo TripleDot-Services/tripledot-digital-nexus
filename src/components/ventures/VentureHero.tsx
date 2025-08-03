@@ -35,13 +35,13 @@ const VentureHero = () => {
           {/* Tech indicators */}
           <div className="flex justify-center space-x-8 mt-8">
             <div className="glass-card px-4 py-2 ventures-pulse-glow">
-              <span className="text-sm text-neo-orange font-medium">AI POWERED</span>
+              <span className="text-sm text-neo-blue font-medium">AI POWERED</span>
             </div>
             <div className="glass-card px-4 py-2 ventures-pulse-glow" style={{ animationDelay: '1s' }}>
-              <span className="text-sm text-neo-emerald font-medium">INNOVATION LAB</span>
+              <span className="text-sm text-neo-purple font-medium">INNOVATION LAB</span>
             </div>
             <div className="glass-card px-4 py-2 ventures-pulse-glow" style={{ animationDelay: '2s' }}>
-              <span className="text-sm text-neo-cyan font-medium">FUTURE TECH</span>
+              <span className="text-sm text-neo-emerald font-medium">FUTURE TECH</span>
             </div>
           </div>
         </div>
