@@ -1,9 +1,6 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronLeft, ChevronRight, Info } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { ChevronDown, ChevronRight, Info } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +26,6 @@ const Navigation = () => {
   return (
     <>
       <nav className="fixed top-0 w-full glass border-b border-white/10 z-50">
-        {/* Main Navigation Tier */}
         <div className="w-full px-3 sm:px-4 lg:px-6 h-16">
           <div className="flex justify-center items-center h-full relative max-w-7xl mx-auto">
             {/* Logo */}
@@ -100,90 +96,6 @@ const Navigation = () => {
             >
               <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`} />
             </button>
-          </div>
-        </div>
-
-        {/* Page Navigation Tier */}
-        <div className="w-full glass bg-background/10 backdrop-blur-sm border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-            {/* Desktop Page Navigation */}
-            <div className="hidden md:flex items-center justify-between h-12">
-              {/* Page Breadcrumb */}
-              <div className="flex items-center space-x-2">
-                {allPages.map((page, index) => {
-                  const isCurrentPage = page.path === location.pathname;
-                  const isPassed = index < currentIndex;
-                  const colorClass = page.path === "/" ? "text-white" : 
-                    page.color === "neo-emerald" ? "text-neo-emerald" : 
-                    page.color === "neo-blue" ? "text-neo-blue" : 
-                    page.color === "neo-purple" ? "text-neo-purple" : 
-                    "text-neo-orange";
-                  
-                  return (
-                    <div key={page.path} className="flex items-center">
-                      <Link
-                        to={page.path}
-                        className={`text-xs font-medium transition-all duration-300 px-3 py-1.5 rounded-full ${
-                          isCurrentPage 
-                            ? `${colorClass} bg-background/20 backdrop-blur-sm border border-white/10 shadow-lg`
-                            : isPassed
-                            ? `${colorClass.replace('text-', 'text-').replace('neo-', 'neo-')}/60 hover:${colorClass}`
-                            : page.path === "/" ? "text-white/40 hover:text-white" :
-                              page.color === "neo-emerald" ? "text-neo-emerald/40 hover:text-neo-emerald" :
-                              page.color === "neo-blue" ? "text-neo-blue/40 hover:text-neo-blue" :
-                              page.color === "neo-purple" ? "text-neo-purple/40 hover:text-neo-purple" :
-                              "text-neo-orange/40 hover:text-neo-orange"
-                        }`}
-                      >
-                        {page.name}
-                      </Link>
-                      {index < allPages.length - 1 && (
-                        <ChevronRight className={`w-3 h-3 mx-2 ${
-                          isPassed ? "text-foreground/60" : "text-foreground/30"
-                        }`} />
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Progress Indicator */}
-              <div className="flex items-center space-x-2">
-                <div className="text-xs text-foreground/60">
-                  {currentIndex + 1} of {allPages.length}
-                </div>
-                <div className="w-20 h-1 bg-background/20 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-neo-blue to-neo-purple transition-all duration-500 ease-out"
-                    style={{ width: `${((currentIndex + 1) / allPages.length) * 100}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Page Navigation */}
-            <div className="md:hidden flex items-center justify-center h-10">
-              <div className="flex items-center space-x-2">
-                {allPages.map((page, index) => {
-                  const isCurrentPage = page.path === location.pathname;
-                  
-                  return (
-                    <div
-                      key={page.path}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        isCurrentPage
-                          ? page.path === "/" ? "bg-white" :
-                            page.color === "neo-emerald" ? "bg-neo-emerald" :
-                            page.color === "neo-blue" ? "bg-neo-blue" :
-                            page.color === "neo-purple" ? "bg-neo-purple" :
-                            "bg-neo-orange"
-                          : "bg-foreground/20"
-                      }`}
-                    />
-                  );
-                })}
-              </div>
-            </div>
           </div>
         </div>
 
