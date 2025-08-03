@@ -18,9 +18,9 @@ const VentureHero = () => {
           {/* Logo dots with synchronized animation */}
           <div className="flex justify-center items-center mb-8">
             <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-neo-orange rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-neo-blue rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-neo-purple rounded-full animate-pulse"></div>
               <div className="w-3 h-3 bg-neo-emerald rounded-full animate-pulse"></div>
-              <div className="w-3 h-3 bg-neo-cyan rounded-full animate-pulse"></div>
             </div>
           </div>
           
