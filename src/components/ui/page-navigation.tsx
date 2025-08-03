@@ -20,7 +20,10 @@ const PageNavigation = () => {
     const currentPath = location.pathname;
     setVisitHistory(prev => {
       if (prev[prev.length - 1] !== currentPath) {
-        return [...prev, currentPath];
+        const newHistory = [...prev, currentPath];
+        // Keep only last 4 unique pages
+        const uniqueHistory = Array.from(new Set(newHistory.reverse())).reverse();
+        return uniqueHistory.slice(-4);
       }
       return prev;
     });
@@ -33,7 +36,8 @@ const PageNavigation = () => {
   if (currentIndex === -1 && !isHomePage) return null;
 
   // Get history for left navigation (excluding current page)
-  const historyPages = visitHistory
+  // If on home page, show empty history
+  const historyPages = isHomePage ? [] : visitHistory
     .slice(0, -1) // Remove current page
     .map(path => pages.find(page => page.path === path))
     .filter((page): page is NonNullable<typeof page> => page !== undefined)
