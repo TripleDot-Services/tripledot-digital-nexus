@@ -81,13 +81,19 @@ const PageNavigation = () => {
             {historyPages.map((page, index) => (
               <div key={`${page.path}-${index}`} className="px-2">
                 <Link to={page.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-2 rounded-lg">
-                  <ChevronLeft className={`w-5 h-5 ${page.color === "neo-emerald" ? "text-neo-emerald" : page.color === "neo-blue" ? "text-neo-blue" : page.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-1`} />
                   <div className={`writing-mode-vertical text-xs font-medium ${page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
                     {page.name}
                   </div>
                 </Link>
               </div>
             ))}
+          </div>
+          
+          {/* Main Navigation - Center */}
+          <div className="flex items-center justify-center py-4">
+            <Link to={historyPages[0]?.path || "/"} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <ChevronLeft className={`w-8 h-8 ${historyPages[0]?.color === "neo-emerald" ? "text-neo-emerald" : historyPages[0]?.color === "neo-blue" ? "text-neo-blue" : historyPages[0]?.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
+            </Link>
           </div>
           
           {/* About Us Navigation - Bottom */}
