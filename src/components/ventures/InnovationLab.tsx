@@ -6,22 +6,22 @@ const InnovationLab = () => {
     {
       icon: Lightbulb,
       title: "AI-Powered Tools",
-      description: "Developing intelligent automation solutions for modern businesses.",
-      color: "neo-orange",
+      description: "Developing intelligent automation solutions for modern businesses through intrapreneurial innovation.",
+      color: "neo-blue",
       particles: "top-4 right-4"
     },
     {
       icon: Rocket,
       title: "SaaS Platforms", 
-      description: "Building scalable software solutions that solve real market problems.",
-      color: "neo-emerald",
+      description: "Building scalable software solutions that solve real market problems with entrepreneurial spirit.",
+      color: "neo-purple",
       particles: "top-6 left-6"
     },
     {
       icon: Target,
       title: "Market Validation",
-      description: "Testing and iterating on ideas with real users and measurable results.",
-      color: "neo-cyan",
+      description: "Testing and iterating on ideas with real users and measurable results, fostering intrapreneurship.",
+      color: "neo-emerald",
       particles: "bottom-4 right-6"
     }
   ];
@@ -30,16 +30,19 @@ const InnovationLab = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-neo-orange rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-neo-emerald rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-neo-cyan rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-60 right-1/3 w-1 h-1 bg-neo-orange rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-20 left-10 w-2 h-2 bg-neo-blue rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-1 h-1 bg-neo-purple rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-neo-emerald rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-60 right-1/3 w-1 h-1 bg-neo-blue rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto relative">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-neo-orange to-neo-emerald bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-neo-blue to-neo-emerald bg-clip-text text-transparent">
           Innovation Lab
         </h2>
+        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+          Dedicated to intrapreneurship - fostering innovation from within to create breakthrough solutions
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {innovations.map((item, index) => (
             <div 

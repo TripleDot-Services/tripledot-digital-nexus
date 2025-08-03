@@ -5,19 +5,19 @@ const VentureProcess = () => {
       number: "01",
       title: "Ideate",
       description: "Generate and validate innovative concepts through market research.",
-      color: "neo-orange"
+      color: "neo-blue"
     },
     {
       number: "02", 
       title: "Prototype",
       description: "Build and test minimum viable products with real user feedback.",
-      color: "neo-emerald"
+      color: "neo-purple"
     },
     {
       number: "03",
       title: "Scale", 
       description: "Launch successful ventures and grow them into sustainable businesses.",
-      color: "neo-cyan"
+      color: "neo-emerald"
     }
   ];
 
@@ -31,13 +31,13 @@ const VentureProcess = () => {
       </div>
       
       <div className="max-w-6xl mx-auto relative">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-neo-orange via-neo-emerald to-neo-cyan bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-neo-blue via-neo-purple to-neo-emerald bg-clip-text text-transparent">
           Venture Process
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
           {/* Connecting lines */}
-          <div className="hidden md:block absolute top-20 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-neo-orange via-neo-emerald to-neo-cyan"></div>
+          <div className="hidden md:block absolute top-20 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-neo-blue via-neo-purple to-neo-emerald"></div>
           
           {steps.map((step, index) => (
             <div key={index} className="text-center relative">

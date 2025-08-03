@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="flex space-x-1">
-                <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
-                <div className="w-2.5 h-2.5 bg-purple-500 rounded-full"></div>
-                <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-neo-blue rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-neo-purple rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-neo-emerald rounded-full"></div>
               </div>
               <span className="text-white font-bold text-xl">TripleDot</span>
             </div>
