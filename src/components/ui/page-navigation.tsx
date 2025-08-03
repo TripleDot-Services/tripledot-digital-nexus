@@ -46,13 +46,25 @@ const PageNavigation = () => {
       {/* Left Side Navigation */}
       {prevPage && (
         <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col justify-between">
-          {/* Main Navigation */}
-          <Link to={prevPage.path} className="flex-1 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-            <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
-            <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : "text-foreground/70 group-hover:text-foreground"} transition-colors duration-300`} style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-              {prevPage.name}
-            </div>
-          </Link>
+          <div className="flex flex-col">
+            {/* Home section at top when not on home or services page */}
+            {!isHomePage && location.pathname !== "/services" && (
+              <Link to="/" className="h-20 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group border-b border-white/5">
+                <Home className="w-5 h-5 text-neo-emerald group-hover:scale-110 transition-transform duration-300 mb-2" />
+                <div className="writing-mode-vertical text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                  Home
+                </div>
+              </Link>
+            )}
+            
+            {/* Main Navigation */}
+            <Link to={prevPage.path} className="flex-1 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group min-h-[120px]">
+              <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
+              <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : "text-foreground/70 group-hover:text-foreground"} transition-colors duration-300`} style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                {prevPage.name}
+              </div>
+            </Link>
+          </div>
           
           {/* About Us at bottom */}
           <Link to="/about" className="h-20 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group border-t border-white/5">
