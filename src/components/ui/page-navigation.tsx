@@ -48,24 +48,48 @@ const PageNavigation = () => {
       </Link>
 
 
-      {/* Left Side Navigation */}
-      {(hierarchyPages.length > 0 || previousPage) && (
-        <Link to={previousPage?.path || "/about"} className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-          <ChevronLeft className={`w-8 h-8 ${previousPage?.path === "/" ? "text-white" : previousPage?.color === "neo-emerald" ? "text-neo-emerald" : previousPage?.color === "neo-blue" ? "text-neo-blue" : previousPage?.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
-          <div className={`writing-mode-vertical text-xs font-medium ${previousPage?.path === "/" ? "text-white/70 group-hover:text-white" : previousPage?.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : previousPage?.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : previousPage?.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300 mt-2`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-            {previousPage ? "Back" : "About"}
-          </div>
-        </Link>
-      )}
-
-      {/* Show only About Us on Home page */}
-      {isHomePage && (
-        <Link to="/about" className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-          <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-            About
-          </div>
-        </Link>
-      )}
+      {/* Horizontal Navigation Menu - Left Edge */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 glass bg-background/20 backdrop-blur-md border border-white/10 rounded-r-lg z-40">
+        <div className="flex flex-col">
+          {pages.map((page, index) => {
+            const isCurrentPage = page.path === location.pathname;
+            const colorClass = page.path === "/" ? "text-white" : 
+              page.color === "neo-emerald" ? "text-neo-emerald" : 
+              page.color === "neo-blue" ? "text-neo-blue" : 
+              page.color === "neo-purple" ? "text-neo-purple" : 
+              "text-neo-orange";
+            
+            return (
+              <Link
+                key={page.path}
+                to={page.path}
+                className={`p-3 hover:bg-background/30 transition-all duration-300 group ${
+                  index === 0 ? 'rounded-tr-lg' : ''
+                } ${
+                  index === pages.length - 1 ? 'rounded-br-lg' : ''
+                } ${
+                  isCurrentPage ? 'bg-background/40' : ''
+                }`}
+              >
+                <div 
+                  className={`writing-mode-vertical text-xs font-medium ${
+                    isCurrentPage 
+                      ? colorClass
+                      : page.path === "/" ? "text-white/70 group-hover:text-white" :
+                        page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" :
+                        page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" :
+                        page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" :
+                        "text-neo-orange/70 group-hover:text-neo-orange"
+                  } transition-colors duration-300`}
+                  style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}
+                >
+                  {page.name}
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Right Side Navigation */}
       {nextPage && (
