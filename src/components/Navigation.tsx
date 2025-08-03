@@ -24,9 +24,9 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full glass border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 h-16">
-        <div className="flex justify-between items-center h-full">
+        <div className="flex justify-center items-center h-full relative">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="absolute left-0 flex items-center space-x-3 group">
             <div className="flex space-x-1.5">
               <div className="w-2.5 h-2.5 bg-neo-blue rounded-full glow-primary animate-pulse shadow-lg"></div>
               <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg" style={{animationDelay: '0.3s'}}></div>
@@ -84,7 +84,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground/70 hover:text-neo-blue"
+            className="absolute right-0 md:hidden text-foreground/70 hover:text-neo-blue"
           >
             <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`} />
           </button>
