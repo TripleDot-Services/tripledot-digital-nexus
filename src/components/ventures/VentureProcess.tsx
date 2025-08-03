@@ -36,8 +36,6 @@ const VentureProcess = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          {/* Connecting lines */}
-          <div className="hidden md:block absolute top-20 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-neo-blue via-neo-purple to-neo-emerald"></div>
           
           {steps.map((step, index) => (
             <div key={index} className="text-center relative">
