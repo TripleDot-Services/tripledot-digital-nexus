@@ -39,17 +39,46 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-neo-blue ${
-                  isActive(item.path) ? "text-neo-blue" : "text-foreground/70"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const getNavColors = (itemName: string) => {
+                switch (itemName) {
+                  case "Services":
+                    return {
+                      hover: "hover:text-neo-blue",
+                      active: "text-neo-blue"
+                    };
+                  case "Creative":
+                    return {
+                      hover: "hover:text-neo-purple",
+                      active: "text-neo-purple"
+                    };
+                  case "Ventures":
+                    return {
+                      hover: "hover:text-neo-orange",
+                      active: "text-neo-orange"
+                    };
+                  default:
+                    return {
+                      hover: "hover:text-neo-blue",
+                      active: "text-neo-blue"
+                    };
+                }
+              };
+
+              const colors = getNavColors(item.name);
+              
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors ${colors.hover} ${
+                    isActive(item.path) ? colors.active : "text-foreground/70"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -64,18 +93,47 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 border-t border-white/10 glass-card">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`block py-2 px-4 text-sm font-medium transition-colors hover:text-neo-blue ${
-                  isActive(item.path) ? "text-neo-blue" : "text-foreground/70"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const getNavColors = (itemName: string) => {
+                switch (itemName) {
+                  case "Services":
+                    return {
+                      hover: "hover:text-neo-blue",
+                      active: "text-neo-blue"
+                    };
+                  case "Creative":
+                    return {
+                      hover: "hover:text-neo-purple",
+                      active: "text-neo-purple"
+                    };
+                  case "Ventures":
+                    return {
+                      hover: "hover:text-neo-orange",
+                      active: "text-neo-orange"
+                    };
+                  default:
+                    return {
+                      hover: "hover:text-neo-blue",
+                      active: "text-neo-blue"
+                    };
+                }
+              };
+
+              const colors = getNavColors(item.name);
+
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`block py-2 px-4 text-sm font-medium transition-colors ${colors.hover} ${
+                    isActive(item.path) ? colors.active : "text-foreground/70"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
