@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Home } from "lucide-react";
+import { ChevronLeft, ChevronRight, Home, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PageNavigation = () => {
@@ -31,6 +31,18 @@ const PageNavigation = () => {
 
   return (
     <>
+      {/* Home Button - Always visible in top-left corner */}
+      {!isHomePage && (
+        <Link to="/" className="fixed left-4 top-20 w-12 h-12 glass bg-background/20 backdrop-blur-md border border-white/10 rounded-full z-40 flex items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <Home className="w-5 h-5 text-neo-emerald group-hover:scale-110 transition-transform duration-300" />
+        </Link>
+      )}
+
+      {/* About Us Button - Always visible in top-right corner */}
+      <Link to="/about" className="fixed right-4 top-20 w-12 h-12 glass bg-background/20 backdrop-blur-md border border-white/10 rounded-full z-40 flex items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+        <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300" />
+      </Link>
+
       {/* Left Side Navigation */}
       {prevPage && (
         <Link to={prevPage.path} className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
