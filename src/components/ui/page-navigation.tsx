@@ -2,15 +2,29 @@
 import { Link, useLocation } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Home, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const PageNavigation = () => {
   const location = useLocation();
+  const [visitHistory, setVisitHistory] = useState<string[]>([]);
   
   const pages = [
+    { name: "Home", path: "/", color: "neo-emerald" },
     { name: "Services", path: "/services", color: "neo-blue" },
     { name: "Creative", path: "/creative", color: "neo-purple" },
     { name: "Ventures", path: "/ventures", color: "neo-orange" },
   ];
+
+  // Track visit history
+  useEffect(() => {
+    const currentPath = location.pathname;
+    setVisitHistory(prev => {
+      if (prev[prev.length - 1] !== currentPath) {
+        return [...prev, currentPath];
+      }
+      return prev;
+    });
+  }, [location.pathname]);
 
   const currentIndex = pages.findIndex(page => page.path === location.pathname);
   const isHomePage = location.pathname === "/";
@@ -18,20 +32,25 @@ const PageNavigation = () => {
   // Don't show navigation on other pages (not home or main pages)
   if (currentIndex === -1 && !isHomePage) return null;
 
-  let prevPage = null;
+  // Get history for left navigation (excluding current page)
+  const historyPages = visitHistory
+    .slice(0, -1) // Remove current page
+    .map(path => pages.find(page => page.path === path))
+    .filter(Boolean)
+    .reverse(); // Most recent first
+
   let nextPage = null;
 
   if (isHomePage) {
     // On home page, show Services as next page
-    nextPage = pages[0]; // Services
+    nextPage = pages[1]; // Services
   } else {
     // On other pages, show normal navigation
-    prevPage = currentIndex > 0 ? pages[currentIndex - 1] : { name: "Home", path: "/", color: "neo-emerald" };
     if (currentIndex < pages.length - 1) {
       nextPage = pages[currentIndex + 1];
     } else {
       // If on last page, cycle back to home
-      nextPage = { name: "Home", path: "/", color: "neo-emerald" };
+      nextPage = pages[0]; // Home
     }
   }
 
@@ -51,26 +70,20 @@ const PageNavigation = () => {
 
 
       {/* Left Side Navigation */}
-      {prevPage && (
+      {historyPages.length > 0 && (
         <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col">
-          {/* Last Page Navigation - Top */}
-          <div className="pt-4">
-            <Link to="/ventures" className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
-              <ChevronLeft className="w-6 h-6 text-neo-orange group-hover:scale-110 transition-transform duration-300 mb-2" />
-              <div className="writing-mode-vertical text-xs font-medium text-neo-orange/70 group-hover:text-neo-orange transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-                Last
+          {/* Visit History Stack */}
+          <div className="flex-1 flex flex-col pt-4 gap-2">
+            {historyPages.map((page, index) => (
+              <div key={`${page.path}-${index}`} className="px-2">
+                <Link to={page.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-2 rounded-lg">
+                  <ChevronLeft className={`w-5 h-5 ${page.color === "neo-emerald" ? "text-neo-emerald" : page.color === "neo-blue" ? "text-neo-blue" : page.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-1`} />
+                  <div className={`writing-mode-vertical text-xs font-medium ${page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+                    {page.name}
+                  </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-          
-          {/* Main Navigation - Center */}
-          <div className="flex-1 flex items-center justify-center">
-            <Link to={prevPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
-              <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
-              <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : prevPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-                {prevPage.name}
-              </div>
-            </Link>
+            ))}
           </div>
           
           {/* About Us Navigation - Bottom */}
