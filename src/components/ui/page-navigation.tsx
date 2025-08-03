@@ -56,9 +56,9 @@ const PageNavigation = () => {
 
       {/* Left Side Navigation */}
       {(hierarchyPages.length > 0 || previousPage) && (
-        <Link to={previousPage?.path || "/about"} className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-end hover:bg-background/30 transition-all duration-300 group pb-8">
+        <Link to={previousPage?.path || "/about"} className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
           <ChevronLeft className={`w-8 h-8 ${previousPage?.path === "/" ? "text-white" : previousPage?.color === "neo-emerald" ? "text-neo-emerald" : previousPage?.color === "neo-blue" ? "text-neo-blue" : previousPage?.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
-          <div className={`writing-mode-vertical text-sm font-medium ${previousPage?.path === "/" ? "text-white/70 group-hover:text-white" : previousPage?.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : previousPage?.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : previousPage?.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300 mt-2`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+          <div className={`writing-mode-vertical text-xs font-medium ${previousPage?.path === "/" ? "text-white/70 group-hover:text-white" : previousPage?.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" : previousPage?.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : previousPage?.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300 mt-2`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
             {previousPage ? "Back" : "About"}
           </div>
         </Link>
@@ -66,8 +66,8 @@ const PageNavigation = () => {
 
       {/* Show only About Us on Home page */}
       {isHomePage && (
-        <Link to="/about" className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-end hover:bg-background/30 transition-all duration-300 group pb-8">
-          <div className="writing-mode-vertical text-sm font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+        <Link to="/about" className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
             About
           </div>
         </Link>
