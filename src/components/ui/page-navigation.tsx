@@ -72,7 +72,10 @@ const PageNavigation = () => {
           {previousPage && (
             <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 flex items-center justify-center">
               <Link to={previousPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
-                <ChevronLeft className={`w-8 h-8 ${previousPage.path === "/" ? "text-white" : previousPage.color === "neo-emerald" ? "text-neo-emerald" : previousPage.color === "neo-blue" ? "text-neo-blue" : previousPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
+                <ChevronLeft className={`w-8 h-8 ${previousPage.path === "/" ? "text-white" : previousPage.color === "neo-emerald" ? "text-neo-emerald" : previousPage.color === "neo-blue" ? "text-neo-blue" : previousPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-2`} />
+                <div className="writing-mode-vertical text-xs font-medium text-white/70 group-hover:text-white transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+                  Back
+                </div>
               </Link>
             </div>
           )}
@@ -104,16 +107,12 @@ const PageNavigation = () => {
 
       {/* Right Side Navigation */}
       {nextPage && (
-        <div className="fixed right-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-l border-white/10 z-40 relative">
-          <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 flex items-center justify-center">
-            <Link to={nextPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
-              <ChevronRight className={`w-8 h-8 ${nextPage.path === "/" ? "text-white" : nextPage.color === "neo-blue" ? "text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
-              <div className={`writing-mode-vertical text-xs font-medium ${nextPage.path === "/" ? "text-white/70 group-hover:text-white" : nextPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
-                {nextPage.name}
-              </div>
-            </Link>
+        <Link to={nextPage.path} className="fixed right-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-l border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <ChevronRight className={`w-8 h-8 ${nextPage.path === "/" ? "text-white" : nextPage.color === "neo-blue" ? "text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
+          <div className={`writing-mode-vertical text-xs font-medium ${nextPage.path === "/" ? "text-white/70 group-hover:text-white" : nextPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+            {nextPage.name}
           </div>
-        </div>
+        </Link>
       )}
     </>
   );
