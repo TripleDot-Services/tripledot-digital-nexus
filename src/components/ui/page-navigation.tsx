@@ -45,13 +45,12 @@ const PageNavigation = () => {
 
       {/* Left Side Navigation */}
       {prevPage && (
-        <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col justify-between">
-          <div className="flex flex-col">
-            {/* Breadcrumb navigation at top */}
+        <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col">
+          {/* Breadcrumb navigation at top - compact */}
+          <div className="flex flex-col pt-2">
             {!isHomePage && (
-              <Link to="/" className="h-16 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group border-b border-white/5">
-                <Home className="w-4 h-4 text-neo-emerald group-hover:scale-110 transition-transform duration-300 mb-1" />
-                <div className="writing-mode-vertical text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+              <Link to="/" className="h-12 flex items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+                <div className="writing-mode-vertical text-xs font-medium text-foreground/50 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
                   Home
                 </div>
               </Link>
@@ -59,11 +58,8 @@ const PageNavigation = () => {
             
             {/* Services breadcrumb when on Creative or Ventures */}
             {(location.pathname === "/creative" || location.pathname === "/ventures") && (
-              <Link to="/services" className="h-16 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group border-b border-white/5">
-                <div className="w-4 h-4 flex items-center justify-center text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-1">
-                  <div className="w-2 h-2 bg-neo-blue rounded-full"></div>
-                </div>
-                <div className="writing-mode-vertical text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+              <Link to="/services" className="h-12 flex items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+                <div className="writing-mode-vertical text-xs font-medium text-foreground/50 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
                   Services
                 </div>
               </Link>
@@ -71,11 +67,8 @@ const PageNavigation = () => {
             
             {/* Creative breadcrumb when on Ventures */}
             {location.pathname === "/ventures" && (
-              <Link to="/creative" className="h-16 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group border-b border-white/5">
-                <div className="w-4 h-4 flex items-center justify-center text-neo-purple group-hover:scale-110 transition-transform duration-300 mb-1">
-                  <div className="w-2 h-2 bg-neo-purple rounded-full"></div>
-                </div>
-                <div className="writing-mode-vertical text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+              <Link to="/creative" className="h-12 flex items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+                <div className="writing-mode-vertical text-xs font-medium text-foreground/50 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
                   Creative
                 </div>
               </Link>
@@ -83,17 +76,18 @@ const PageNavigation = () => {
           </div>
           
           {/* Main Navigation - ALWAYS in center with big arrow */}
-          <Link to={prevPage.path} className="flex-1 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-            <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
-            <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : "text-foreground/70 group-hover:text-foreground"} transition-colors duration-300`} style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-              {prevPage.name}
-            </div>
-          </Link>
+          <div className="flex-1 flex items-center justify-center">
+            <Link to={prevPage.path} className="flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group p-4 rounded-lg">
+              <ChevronLeft className={`w-8 h-8 ${prevPage.path === "/" ? "text-white" : prevPage.color === "neo-blue" ? "text-neo-blue" : prevPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300 mb-4`} />
+              <div className={`writing-mode-vertical text-sm font-medium ${prevPage.path === "/" ? "text-white/70 group-hover:text-white" : "text-foreground/70 group-hover:text-foreground"} transition-colors duration-300`} style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                {prevPage.name}
+              </div>
+            </Link>
+          </div>
           
           {/* About Us at bottom */}
-          <Link to="/about" className="h-20 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group border-t border-white/5">
-            <Info className="w-5 h-5 text-neo-blue group-hover:scale-110 transition-transform duration-300 mb-2" />
-            <div className="writing-mode-vertical text-xs font-medium text-foreground/70 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+          <Link to="/about" className="h-16 flex items-center justify-center hover:bg-background/30 transition-all duration-300 group border-t border-white/5">
+            <div className="writing-mode-vertical text-xs font-medium text-foreground/50 group-hover:text-foreground transition-colors duration-300" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
               About
             </div>
           </Link>
