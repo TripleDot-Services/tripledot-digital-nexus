@@ -12,12 +12,22 @@ const PageNavigation = () => {
   ];
 
   const currentIndex = pages.findIndex(page => page.path === location.pathname);
+  const isHomePage = location.pathname === "/";
   
-  // Don't show navigation on homepage or other pages
-  if (currentIndex === -1) return null;
+  // Don't show navigation on other pages (not home or main pages)
+  if (currentIndex === -1 && !isHomePage) return null;
 
-  const prevPage = currentIndex > 0 ? pages[currentIndex - 1] : { name: "Home", path: "/", color: "neo-emerald" };
-  const nextPage = currentIndex < pages.length - 1 ? pages[currentIndex + 1] : null;
+  let prevPage = null;
+  let nextPage = null;
+
+  if (isHomePage) {
+    // On home page, show Services as next page
+    nextPage = pages[0]; // Services
+  } else {
+    // On other pages, show normal navigation
+    prevPage = currentIndex > 0 ? pages[currentIndex - 1] : { name: "Home", path: "/", color: "neo-emerald" };
+    nextPage = currentIndex < pages.length - 1 ? pages[currentIndex + 1] : null;
+  }
 
   return (
     <>
