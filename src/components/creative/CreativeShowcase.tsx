@@ -32,16 +32,23 @@ const CreativeShowcase = () => {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Glass background */}
+      <div className="absolute inset-0 glass-bg"></div>
+      
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-neo-purple/20 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-neo-pink/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Work</h2>
-          <p className="text-gray-400 text-lg">Recent projects that transformed businesses</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 gradient-text-secondary">Featured Work</h2>
+          <p className="text-muted-foreground text-lg">Recent projects that transformed businesses</p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="bg-gray-900/50 border-gray-800 hover:border-gray-600 transition-all group overflow-hidden">
+            <Card key={index} className="glass-card border border-neo-purple/30 hover:border-neo-purple/50 transition-all group overflow-hidden hover:scale-105 glow-secondary">
               <div className={`h-48 bg-gradient-to-br ${project.color} relative`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                 <div className="absolute top-4 right-4">
@@ -51,21 +58,21 @@ const CreativeShowcase = () => {
               
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <Badge variant="outline" className="text-purple-400 border-purple-400">
+                  <Badge variant="outline" className="text-neo-purple border-neo-purple/50">
                     {project.type}
                   </Badge>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-neo-purple">{project.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                 
-                <div className="text-lg font-semibold text-pink-400 mb-4">
+                <div className="text-lg font-semibold text-neo-pink mb-4">
                   {project.result}
                 </div>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">
+                    <span key={tagIndex} className="text-xs glass-card text-muted-foreground px-2 py-1 rounded border border-neo-purple/20">
                       {tag}
                     </span>
                   ))}
