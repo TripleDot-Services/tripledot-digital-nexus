@@ -13,7 +13,7 @@ const VerticalNavigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed left-0 top-0 h-screen w-48 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-30 hidden lg:flex flex-col">
+    <nav className="fixed left-0 top-0 h-screen w-48 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 hidden lg:flex flex-col">
       {/* Logo Section */}
       <div className="h-16 flex items-center px-6 border-b border-white/10">
         <Link to="/" className="flex items-center space-x-3 group">

@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
 import ScrollToTop from "@/components/ui/scroll-to-top";
-import PageLayout from "@/components/ui/page-layout";
 import VentureHero from "@/components/ventures/VentureHero";
 import VentureMetrics from "@/components/ventures/VentureMetrics";
 import InnovationLab from "@/components/ventures/InnovationLab";
@@ -15,7 +14,7 @@ import { Settings, Palette } from "lucide-react";
 
 const Ventures = () => {
   return (
-    <PageLayout>
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Ventures - TripleDot"
         description="Our internal innovation and product lab where we build, test, and launch new digital solutions for the future."
@@ -67,7 +66,7 @@ const Ventures = () => {
       </PageTransition>
       <Footer />
       <ScrollToTop />
-    </PageLayout>
+    </div>
   );
 };
 

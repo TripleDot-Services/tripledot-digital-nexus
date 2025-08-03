@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
 import ScrollToTop from "@/components/ui/scroll-to-top";
-import PageLayout from "@/components/ui/page-layout";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <PageLayout>
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Contact - TripleDot"
         description="Get in touch with TripleDot for digital transformation, creative design, and technology innovation services."
@@ -266,7 +265,7 @@ const Contact = () => {
 
       <Footer />
       <ScrollToTop />
-    </PageLayout>
+    </div>
   );
 };
 

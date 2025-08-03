@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import PageTransition from "@/components/ui/page-transition";
 import ScrollToTop from "@/components/ui/scroll-to-top";
-import PageLayout from "@/components/ui/page-layout";
 import CreativeHero from "@/components/creative/CreativeHero";
 import CreativeShowcase from "@/components/creative/CreativeShowcase";
 import CreativeProcess from "@/components/creative/CreativeProcess";
@@ -14,7 +13,7 @@ import { Settings, Lightbulb } from "lucide-react";
 
 const Creative = () => {
   return (
-    <PageLayout>
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Creative - TripleDot"
         description="Design that converts. Content that captivates. Brands that inspire. Professional creative services for modern businesses."
@@ -70,7 +69,7 @@ const Creative = () => {
       </PageTransition>
       <Footer />
       <ScrollToTop />
-    </PageLayout>
+    </div>
   );
 };
 
