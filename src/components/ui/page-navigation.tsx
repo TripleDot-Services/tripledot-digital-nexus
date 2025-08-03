@@ -1,7 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Info, Menu } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ChevronLeft, ChevronRight, Info } from "lucide-react";
 
 const PageNavigation = () => {
   const location = useLocation();
@@ -49,53 +48,46 @@ const PageNavigation = () => {
       </Link>
 
 
-      {/* Horizontal Accordion Navigation Menu - Left Edge */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40">
-        <Accordion type="single" collapsible className="w-fit">
-          <AccordionItem value="navigation" className="border-none">
-            <AccordionTrigger className="glass bg-background/20 backdrop-blur-md border border-white/10 rounded-full w-12 h-12 flex items-center justify-center hover:bg-background/30 transition-all duration-300 p-0 hover:no-underline">
-              <Menu className="w-5 h-5 text-white" />
-            </AccordionTrigger>
-            <AccordionContent className="pb-0 pt-2">
-              <div className="glass bg-background/20 backdrop-blur-md border border-white/10 rounded-lg p-2">
-                <div className="flex flex-row gap-1">
-                  {pages.map((page, index) => {
-                    const isCurrentPage = page.path === location.pathname;
-                    const colorClass = page.path === "/" ? "text-white" : 
-                      page.color === "neo-emerald" ? "text-neo-emerald" : 
-                      page.color === "neo-blue" ? "text-neo-blue" : 
-                      page.color === "neo-purple" ? "text-neo-purple" : 
-                      "text-neo-orange";
-                    
-                    return (
-                      <Link
-                        key={page.path}
-                        to={page.path}
-                        className={`px-3 py-2 hover:bg-background/30 transition-all duration-300 group rounded-md ${
-                          isCurrentPage ? 'bg-background/40' : ''
-                        }`}
-                      >
-                        <div 
-                          className={`text-xs font-medium whitespace-nowrap ${
-                            isCurrentPage 
-                              ? colorClass
-                              : page.path === "/" ? "text-white/70 group-hover:text-white" :
-                                page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" :
-                                page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" :
-                                page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" :
-                                "text-neo-orange/70 group-hover:text-neo-orange"
-                          } transition-colors duration-300`}
-                        >
-                          {page.name}
-                        </div>
-                      </Link>
-                    );
-                  })}
+      {/* Vertical Navigation Menu with Horizontal Text - Left Edge */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 glass bg-background/20 backdrop-blur-md border border-white/10 rounded-r-lg z-40">
+        <div className="flex flex-col">
+          {pages.map((page, index) => {
+            const isCurrentPage = page.path === location.pathname;
+            const colorClass = page.path === "/" ? "text-white" : 
+              page.color === "neo-emerald" ? "text-neo-emerald" : 
+              page.color === "neo-blue" ? "text-neo-blue" : 
+              page.color === "neo-purple" ? "text-neo-purple" : 
+              "text-neo-orange";
+            
+            return (
+              <Link
+                key={page.path}
+                to={page.path}
+                className={`p-3 hover:bg-background/30 transition-all duration-300 group ${
+                  index === 0 ? 'rounded-tr-lg' : ''
+                } ${
+                  index === pages.length - 1 ? 'rounded-br-lg' : ''
+                } ${
+                  isCurrentPage ? 'bg-background/40' : ''
+                }`}
+              >
+                <div 
+                  className={`text-xs font-medium ${
+                    isCurrentPage 
+                      ? colorClass
+                      : page.path === "/" ? "text-white/70 group-hover:text-white" :
+                        page.color === "neo-emerald" ? "text-neo-emerald/70 group-hover:text-neo-emerald" :
+                        page.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" :
+                        page.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" :
+                        "text-neo-orange/70 group-hover:text-neo-orange"
+                  } transition-colors duration-300`}
+                >
+                  {page.name}
                 </div>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+              </Link>
+            );
+          })}
+        </div>
       </div>
 
       {/* Right Side Navigation */}
