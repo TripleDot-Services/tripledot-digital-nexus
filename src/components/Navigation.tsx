@@ -25,11 +25,11 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="fixed top-0 w-full glass border-b border-white/10 z-50">
+      <nav className="fixed top-0 w-full glass border-b border-white/10 z-40">
         <div className="w-full px-3 sm:px-4 lg:px-6 lg:pl-52 h-16">
-          <div className="flex justify-center items-center h-full relative max-w-7xl mx-auto">
+          <div className="flex justify-between items-center h-full max-w-7xl mx-auto">
             {/* Mobile Logo */}
-            <Link to="/" className="absolute left-0 flex items-center space-x-3 group lg:hidden">
+            <Link to="/" className="flex items-center space-x-3 group lg:hidden">
               <div className="flex space-x-1.5">
                 <div className="w-2.5 h-2.5 bg-neo-blue rounded-full glow-primary animate-pulse shadow-lg"></div>
                 <div className="w-2.5 h-2.5 bg-neo-purple rounded-full glow-secondary animate-pulse shadow-lg"></div>
@@ -40,62 +40,32 @@ const Navigation = () => {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center justify-center space-x-8 h-full">
-              {navItems.map((item) => {
-                const getNavColors = (itemName: string) => {
-                  switch (itemName) {
-                    case "Services":
-                      return {
-                        hover: "hover:text-neo-blue",
-                        active: "text-neo-blue"
-                      };
-                    case "Creative":
-                      return {
-                        hover: "hover:text-neo-purple",
-                        active: "text-neo-purple"
-                      };
-                    case "Ventures":
-                      return {
-                        hover: "hover:text-neo-orange",
-                        active: "text-neo-orange"
-                      };
-                    default:
-                      return {
-                        hover: "hover:text-neo-blue",
-                        active: "text-neo-blue"
-                      };
-                  }
-                };
+            {/* Right Side Actions */}
+            <div className="flex items-center space-x-4">
+              {/* Call to Action Button */}
+              <Link 
+                to="/contact" 
+                className="px-4 py-2 bg-neo-blue/20 text-neo-blue border border-neo-blue/30 rounded-lg hover:bg-neo-blue/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm"
+              >
+                Get Started
+              </Link>
+              
+              {/* About Us Button */}
+              <Link 
+                to="/about" 
+                className="w-10 h-10 glass bg-background/20 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center hover:bg-background/30 transition-all duration-300 group"
+              >
+                <Info className="w-4 h-4 text-neo-blue group-hover:scale-110 transition-transform duration-300" />
+              </Link>
 
-                const colors = getNavColors(item.name);
-                
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`text-sm font-medium transition-colors ${colors.hover} ${
-                      isActive(item.path) ? colors.active : "text-foreground/70"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden text-foreground/70 hover:text-neo-blue"
+              >
+                <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+              </button>
             </div>
-
-            {/* About Button */}
-            <Link to="/about" className="absolute right-12 md:right-0 w-10 h-10 glass bg-background/20 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-              <Info className="w-4 h-4 text-neo-blue group-hover:scale-110 transition-transform duration-300" />
-            </Link>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="absolute right-0 md:hidden text-foreground/70 hover:text-neo-blue"
-            >
-              <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-            </button>
           </div>
         </div>
 
