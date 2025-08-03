@@ -66,8 +66,8 @@ const PageNavigation = () => {
 
       {/* Show only About Us on Home page */}
       {isHomePage && (
-        <Link to="/about" className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
-          <div className="writing-mode-vertical text-xs font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300 mt-2" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
+        <Link to="/about" className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-16 glass bg-background/20 backdrop-blur-md border-r border-white/10 z-40 flex flex-col items-center justify-end hover:bg-background/30 transition-all duration-300 group pb-8">
+          <div className="writing-mode-vertical text-sm font-medium text-neo-blue/70 group-hover:text-neo-blue transition-colors duration-300" style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
             About
           </div>
         </Link>
