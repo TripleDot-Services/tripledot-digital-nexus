@@ -13,9 +13,9 @@ const VerticalNavigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed left-0 top-0 h-screen w-48 bg-black/20 backdrop-blur-xl border-r border-white/20 z-50 hidden lg:flex flex-col">
+    <nav className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-48 bg-black/20 backdrop-blur-xl border-r border-white/20 z-50 hidden lg:flex flex-col">
       {/* Navigation Items */}
-      <div className="flex-1 flex flex-col justify-start pt-20">
+      <div className="flex-1 flex flex-col justify-start pt-6">
         <div className="space-y-2 px-6">
           {navItems.map((item) => {
             const isCurrentPage = isActive(item.path);
