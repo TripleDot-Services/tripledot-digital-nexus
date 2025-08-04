@@ -25,7 +25,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="fixed top-0 w-full glass border-b border-white/10 z-40">
+      <nav className="fixed top-0 w-full glass backdrop-blur-md border-b border-white/10 z-40">
         <div className="w-full px-3 sm:px-4 lg:px-6 lg:pl-48 h-16">
           <div className="flex justify-between items-center h-full max-w-7xl mx-auto">
             {/* Mobile Logo */}
@@ -140,7 +140,7 @@ const Navigation = () => {
         }
 
         return nextPage ? (
-          <Link to={nextPage.path} className="fixed right-0 top-32 h-[calc(100vh-8rem)] w-16 glass bg-background/20 backdrop-blur-md border-l border-white/10 z-40 hidden lg:flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
+          <Link to={nextPage.path} className="fixed right-0 top-0 h-screen w-16 glass backdrop-blur-md border-l border-white/10 z-30 hidden lg:flex flex-col items-center justify-center hover:bg-background/30 transition-all duration-300 group">
             <ChevronRight className={`w-8 h-8 ${nextPage.path === "/" ? "text-white" : nextPage.color === "neo-blue" ? "text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple" : "text-neo-orange"} group-hover:scale-110 transition-transform duration-300`} />
             <div className={`writing-mode-vertical text-xs font-medium ${nextPage.path === "/" ? "text-white/70 group-hover:text-white" : nextPage.color === "neo-blue" ? "text-neo-blue/70 group-hover:text-neo-blue" : nextPage.color === "neo-purple" ? "text-neo-purple/70 group-hover:text-neo-purple" : "text-neo-orange/70 group-hover:text-neo-orange"} transition-colors duration-300 mt-2`} style={{writingMode: 'vertical-rl', textOrientation: 'mixed'}}>
               {nextPage.name}
