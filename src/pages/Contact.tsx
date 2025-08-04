@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground lg:pl-48 lg:pr-16">
       <SEO 
         title="Contact - TripleDot"
         description="Get in touch with TripleDot for digital transformation, creative design, and technology innovation services."

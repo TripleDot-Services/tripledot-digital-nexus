@@ -10,7 +10,7 @@ import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground lg:pl-48 lg:pr-16">
       <SEO 
         title="TripleDot - Services, Creative, Ventures"
         description="Reliable infrastructure, captivating design, and innovative solutions working together to transform your business."

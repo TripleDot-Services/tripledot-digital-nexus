@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/ui/scroll-to-top";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground lg:pl-48 lg:pr-16">
       <SEO 
         title="About - TripleDot"
         description="Learn about TripleDot's mission, team, and approach to digital transformation, creative design, and technology innovation."

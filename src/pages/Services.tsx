@@ -15,7 +15,7 @@ import { servicesPagePillars } from "@/data/pillars";
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground pl-16 pr-16">
+    <div className="min-h-screen bg-background text-foreground lg:pl-48 lg:pr-16">
       <SEO 
         title="Services - TripleDot"
         description="Technology solutions that work. Digital enablement, managed hosting, security, and workflow automation services to power your business growth."
