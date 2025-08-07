@@ -14,7 +14,7 @@ const VerticalNavigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-48 bg-black/20 backdrop-blur-xl border-r border-white/20 z-50 hidden lg:flex flex-col">
+    <nav className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-48 glass border-r border-white/20 z-50 hidden lg:flex flex-col">
       {/* Navigation Items */}
       <div className="flex-1 flex flex-col justify-start pt-6">
         <div className="space-y-2 px-6">
